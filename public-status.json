@@ -1,0 +1,97 @@
+{
+  "generated_by": "PMリグルド",
+  "updated_at": "2026-07-12T16:16:08.394Z",
+  "projects": [
+    {
+      "id": "autousd-b-model",
+      "name": "AutoUSD 月$5,000事業計画",
+      "status": "active",
+      "health": "y",
+      "goal": "月$5,000 USD（30〜36ヶ月・CEO承認済 2026-07-08）",
+      "done_criteria": "月$5,000 USDを3ヶ月連続達成",
+      "next_action": "❹❺とも実装済み・ローカルでは有効化済み（GA4測定ID・Klook/Viatorアフィリ6件enabled:true、npm run build確認済み）だが未commit＝本番は旧状態のまま。commit&pushで本番反映されるがCEO確認後に実行",
+      "waiting_on_ceo": [
+        "❷外注パイロット・❼税理士確認の判断（説明待ち）",
+        "🆕 mainへのcommit&push許可（GA4計測タグ＋Klook/Viatorアフィリ6件が本番で有効化される）"
+      ],
+      "last_checked": "2026-07-12"
+    },
+    {
+      "id": "japan-trip-planner",
+      "name": "Japan Trip Planner（AutoUSD第1弾商品）",
+      "status": "active",
+      "health": "y",
+      "goal": "Etsy出品（縦・実写真・Canvaテンプレ納品）",
+      "done_criteria": "Etsyに出品完了し初売上",
+      "next_action": "p29-33の画像生成はv3版まで完了済み。AI側の残タスクなし",
+      "waiting_on_ceo": [
+        "Canvaアプリでのページ結合＋ナビリンク貼り（AI不可領域）"
+      ],
+      "last_checked": "2026-07-12"
+    },
+    {
+      "id": "dokodemo-blog-seo",
+      "name": "DokodemoJapan ブログ・SEO・アフィリ審査",
+      "status": "active",
+      "health": "r",
+      "goal": "独自ドメインでSEO評価を蓄積しアフィリエイト審査を通す",
+      "done_criteria": "docs/SEO_DOMAIN_PLAYBOOK.md の残タスク全消化＋主要アフィリ審査合格",
+      "next_action": "hiroshima-miyajima（待ち5日目・catch-up推奨）／tokyo-skytree（待ち2日目）ともCEOのja内容レビュー待ち。既存2件のレビューが進めばFushimi Inari（#4・affiliate_status:ready）着手可",
+      "waiting_on_ceo": [
+        "🔴 hiroshima-miyajima記事（in_review・待ち5日目）の内容承認→承認後en/ko/zh-TW翻訳着手",
+        "tokyo-skytree記事（in_review・待ち2日目）の内容承認"
+      ],
+      "last_checked": "2026-07-12"
+    },
+    {
+      "id": "dokodemo-thai-locale",
+      "name": "DokodemoJapan タイ語(th)ロケール展開",
+      "status": "active",
+      "health": "g",
+      "goal": "全記事にタイ語ロケールを追加（訪日タイ人+23.8%増を踏まえた多言語拡張。CEO決定2026-07-12）",
+      "done_criteria": "全公開記事のth.md翻訳完了・サイトth ロケールとして正式公開",
+      "next_action": "Stage2の次の翻訳対象（観光系記事）を選定し、kurobee→content-creator-advocateレビューのフローで継続",
+      "waiting_on_ceo": [],
+      "last_checked": "2026-07-12"
+    },
+    {
+      "id": "otayorijapan",
+      "name": "Japan Market Pulse（おたよりジャパン・外貨新規事業）",
+      "status": "active",
+      "health": "y",
+      "goal": "日本ECデータ×英語圏B2B監視の自動収集・レポート事業（月$200〜500セルフサーブ・通話ゼロ設計。CEO GO 2026-07-11）",
+      "done_criteria": "プロダクト名・ドメイン確定→Vercel/Netlifyデプロイ→Paddle審査合格→初回課金",
+      "next_action": "残る大物（C-1 Proのdata feed実サンプル不在／C-2 sources.yaml再設計／W-1,W-2見込みリストTier再設計／W-5 Pro$499価格根拠）はCEO製品判断 or 新規スプリント規模のため提案止まり。CEO判断待ち",
+      "waiting_on_ceo": [
+        "プロダクト名・ドメイン確定",
+        "Vercelデプロイ実行／Paddle審査申請",
+        "Proティアの扱い（実サンプル無しで公開 vs 当面Coming soon化）"
+      ],
+      "last_checked": "2026-07-11"
+    },
+    {
+      "id": "goal-guard-validation",
+      "name": "ゴール漂流の番人（マイクロSaaS需要検証・8週間）",
+      "status": "active",
+      "health": "g",
+      "goal": "「AIに仕事を任せる人のゴール漂流」課題に需要シグナルがあるか、日本語LP＋オーガニック発信のみで検証する（CEO承認 2026-07-12・選択肢2）",
+      "done_criteria": "8週間（〜2026-09-06）で判定: 先行予約5件以上=第2ゲート（有料β）へ / 未達or撤退トリガー該当=(c)資産化止まりでクローズ",
+      "next_action": "週次タスク割り表と発信下限N/M（提案: N=16本/M=5万imp）を確定→LP骨子制作（kurobee/benimaru）",
+      "waiting_on_ceo": [],
+      "last_checked": "2026-07-12"
+    },
+    {
+      "id": "mercari-reconciliation",
+      "name": "メルカリ外注費 検算自動化（GAS）",
+      "status": "paused",
+      "health": null,
+      "goal": "毎月2日に7名分の外注費検算を自動実行",
+      "done_criteria": "本番シートでV1が1サイクル（1ヶ月分）正常実行",
+      "next_action": "CEOの初回OAuth認可後、実データで初回実行を検証",
+      "waiting_on_ceo": [
+        "検算マスターのApps Scriptで setupSettingSheet を1回実行（初回OAuth認可・ブラウザ操作）"
+      ],
+      "last_checked": "2026-07-08"
+    }
+  ]
+}
