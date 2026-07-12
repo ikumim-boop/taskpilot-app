@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#faf7f1" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1d1c1a" media="(prefers-color-scheme: dark)">
+<title>TaskPilot — 完遂まで進めるプロジェクト管理</title>
+<meta name="description" content="プロジェクトを「完遂条件」で管理し、毎日の一手を明確にするタスク管理アプリ。スマホ対応PWA。">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon-192.png">
+<style>
+:root{
+  --bg:#faf7f1; --card:#ffffff; --ink:#2b2a26; --ink2:#6f6a5f; --ink3:#a39c8d;
+  --line:#e8e2d5; --accent:#c05f3c; --accent-soft:#f6e3da; --green:#2f5d50; --green-soft:#e2ece8;
+  --amber:#a86b12; --amber-soft:#f7ecd8; --red:#a33326; --red-soft:#f8e4e1;
+  --shadow:0 1px 3px rgba(43,42,38,.07),0 4px 16px rgba(43,42,38,.05);
+  --radius:14px; --nav-h:60px;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#1d1c1a; --card:#282624; --ink:#efe9dd; --ink2:#b0a998; --ink3:#7c766a;
+    --line:#3a3733; --accent:#e08a66; --accent-soft:#463027; --green:#8fc4b3; --green-soft:#283630;
+    --amber:#e0a94f; --amber-soft:#3d3323; --red:#e2796c; --red-soft:#442822;
+    --shadow:0 1px 3px rgba(0,0,0,.3),0 4px 16px rgba(0,0,0,.2);
+  }
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic UI",system-ui,-apple-system,sans-serif;
+  background:var(--bg); color:var(--ink); line-height:1.6; font-size:15px;
+  padding-bottom:calc(var(--nav-h) + env(safe-area-inset-bottom));
+}
+header.app{
+  position:sticky; top:0; z-index:20; background:color-mix(in srgb,var(--bg) 88%,transparent);
+  backdrop-filter:blur(10px); border-bottom:1px solid var(--line);
+  padding:calc(10px + env(safe-area-inset-top)) 16px 10px; display:flex; align-items:center; gap:10px;
+}
+.logo{display:flex;align-items:center;gap:8px;font-weight:700;font-size:17px;letter-spacing:.02em}
+.logo .mark{width:26px;height:26px;border-radius:8px;background:var(--accent);color:#fff;display:grid;place-items:center;font-size:15px;font-weight:800}
+.logo small{font-weight:500;color:var(--ink2);font-size:11px;margin-left:2px}
+header .spacer{flex:1}
+.iconbtn{border:1px solid var(--line);background:var(--card);color:var(--ink2);border-radius:10px;width:34px;height:34px;display:grid;place-items:center;font-size:16px;cursor:pointer}
+main{max-width:960px;margin:0 auto;padding:16px}
+h2.sec{font-size:13px;font-weight:700;color:var(--ink2);letter-spacing:.08em;margin:18px 2px 8px;text-transform:uppercase}
+
+/* ---- Dashboard ---- */
+.today{display:flex;align-items:baseline;gap:10px;margin:4px 2px 14px;flex-wrap:wrap}
+.today .date{font-size:20px;font-weight:700}
+.today .meta{color:var(--ink2);font-size:13px}
+.pcard{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:14px 16px;margin-bottom:12px;cursor:pointer}
+.pcard .top{display:flex;align-items:center;gap:8px}
+.dot{width:10px;height:10px;border-radius:50%;flex:none}
+.dot.g{background:#3f8f5f}.dot.y{background:#d9a23a}.dot.r{background:#c94f3d}
+.pcard .name{font-weight:700;font-size:16px;flex:1}
+.pcard .pct{font-size:13px;color:var(--ink2);font-variant-numeric:tabular-nums}
+.bar{height:6px;border-radius:3px;background:var(--line);margin:10px 0 8px;overflow:hidden}
+.bar i{display:block;height:100%;border-radius:3px;background:var(--green);transition:width .4s}
+.pcard .goal{font-size:12.5px;color:var(--ink2);display:flex;gap:6px}
+.pcard .goal b{color:var(--ink3);font-weight:600;flex:none}
+.nextact{margin-top:10px;background:var(--accent-soft);border-radius:10px;padding:8px 12px;font-size:13.5px;display:flex;gap:8px;align-items:center}
+.nextact .tag{flex:none;font-size:11px;font-weight:700;color:var(--accent)}
+.waitline{margin-top:6px;font-size:12.5px;color:var(--amber);display:flex;gap:6px;align-items:center}
+.donebanner{margin-top:10px;background:var(--green-soft);color:var(--green);border-radius:10px;padding:8px 12px;font-size:13.5px;font-weight:700;display:flex;justify-content:space-between;align-items:center}
+.donebanner button{background:var(--green);border:none;color:#fff;border-radius:8px;padding:5px 12px;font-size:12.5px;font-weight:700;cursor:pointer}
+.empty{color:var(--ink3);text-align:center;padding:40px 10px;font-size:14px}
+
+/* ---- Board ---- */
+.boardbar{display:flex;gap:8px;margin-bottom:12px;overflow-x:auto;padding:2px}
+.chip{border:1px solid var(--line);background:var(--card);color:var(--ink2);border-radius:999px;padding:5px 14px;font-size:13px;white-space:nowrap;cursor:pointer}
+.chip.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.board{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;overflow-x:auto;align-items:start}
+.board .col{min-width:0}
+@media (max-width:760px){.board{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px}.col{min-width:82vw;scroll-snap-align:center}}
+.col{background:color-mix(in srgb,var(--card) 55%,var(--bg));border:1px solid var(--line);border-radius:var(--radius);padding:10px}
+.col h3{font-size:13px;font-weight:700;color:var(--ink2);display:flex;justify-content:space-between;padding:2px 4px 8px}
+.col h3 .cnt{color:var(--ink3);font-weight:600}
+.tcard{background:var(--card);border:1px solid var(--line);border-radius:11px;box-shadow:var(--shadow);padding:10px 12px;margin-bottom:8px;cursor:pointer;position:relative}
+.tcard .t{font-size:14px;font-weight:600;line-height:1.45}
+.tcard .m{display:flex;gap:6px;align-items:center;margin-top:7px;flex-wrap:wrap}
+.badge{font-size:11px;border-radius:6px;padding:1.5px 7px;font-weight:600}
+.badge.proj{color:var(--green);background:var(--green-soft)}
+.badge.due{color:var(--ink2);background:var(--bg)}
+.badge.due.over{color:var(--red);background:var(--red-soft)}
+.badge.p1{color:var(--red);background:var(--red-soft)}
+.badge.p2{color:var(--amber);background:var(--amber-soft)}
+.badge.wait{color:var(--amber);background:var(--amber-soft)}
+.mv{display:flex;gap:4px;margin-top:8px}
+.mv button{flex:1;border:1px solid var(--line);background:var(--bg);color:var(--ink2);border-radius:8px;padding:4px 0;font-size:12px;cursor:pointer}
+.tcard.drag{opacity:.4}
+.col.over{outline:2px dashed var(--accent);outline-offset:-4px}
+
+/* ---- Projects view ---- */
+.projrow{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:13px 16px;margin-bottom:10px;display:flex;align-items:center;gap:10px;cursor:pointer}
+.projrow .nm{font-weight:700;flex:1}
+.projrow .st{font-size:12px;color:var(--ink2)}
+.projrow.dim{opacity:.55}
+
+/* ---- Bottom nav ---- */
+nav.tabs{
+  position:fixed;left:0;right:0;bottom:0;height:calc(var(--nav-h) + env(safe-area-inset-bottom));
+  padding-bottom:env(safe-area-inset-bottom);
+  background:color-mix(in srgb,var(--card) 92%,transparent);backdrop-filter:blur(12px);
+  border-top:1px solid var(--line);display:flex;z-index:30;
+}
+nav.tabs button{flex:1;border:none;background:none;color:var(--ink3);font-size:10.5px;font-weight:600;display:flex;flex-direction:column;align-items:center;gap:2px;padding-top:8px;cursor:pointer}
+nav.tabs button .ic{font-size:20px;line-height:1}
+nav.tabs button.on{color:var(--accent)}
+
+/* ---- FAB ---- */
+.fab{position:fixed;right:18px;bottom:calc(var(--nav-h) + env(safe-area-inset-bottom) + 16px);width:54px;height:54px;border-radius:50%;background:var(--accent);color:#fff;border:none;font-size:26px;box-shadow:0 6px 20px rgba(192,95,60,.4);cursor:pointer;z-index:25}
+
+/* ---- Sheet (modal) ---- */
+.sheetwrap{position:fixed;inset:0;background:rgba(20,18,15,.45);z-index:40;display:none;align-items:flex-end;justify-content:center}
+.sheetwrap.open{display:flex}
+.sheet{background:var(--card);width:100%;max-width:560px;border-radius:20px 20px 0 0;padding:20px 20px calc(20px + env(safe-area-inset-bottom));max-height:88vh;overflow-y:auto}
+@media(min-width:640px){.sheetwrap{align-items:center}.sheet{border-radius:20px}}
+.sheet h3{font-size:17px;margin-bottom:14px}
+.f{margin-bottom:12px}
+.f label{display:block;font-size:12px;font-weight:700;color:var(--ink2);margin-bottom:4px}
+.f input,.f select,.f textarea{width:100%;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:10px;padding:9px 12px;font-size:15px;font-family:inherit}
+.f textarea{min-height:70px;resize:vertical}
+.frow{display:flex;gap:10px}.frow .f{flex:1}
+.btns{display:flex;gap:10px;margin-top:16px}
+.btn{flex:1;border:none;border-radius:11px;padding:12px;font-size:15px;font-weight:700;cursor:pointer}
+.btn.pri{background:var(--accent);color:#fff}
+.btn.sec{background:var(--bg);color:var(--ink2);border:1px solid var(--line)}
+.btn.danger{background:none;color:var(--red);border:1px solid var(--red-soft);flex:0 0 auto;padding:12px 16px}
+.samplebar{background:var(--amber-soft);color:var(--amber);font-size:12.5px;padding:8px 14px;border-radius:10px;margin-bottom:14px;display:flex;justify-content:space-between;gap:10px;align-items:center}
+.samplebar button{border:none;background:none;color:var(--amber);font-weight:700;cursor:pointer;font-size:12.5px;text-decoration:underline}
+.settings-list{display:flex;flex-direction:column;gap:8px}
+.settings-list .btn{flex:none}
+</style>
+</head>
+<body>
+<header class="app">
+  <div class="logo"><span class="mark">T</span>TaskPilot<small>完遂まで進める</small></div>
+  <div class="spacer"></div>
+  <button class="iconbtn" id="settingsBtn" title="設定">⚙</button>
+</header>
+
+<main id="main"></main>
+
+<button class="fab" id="fab" title="タスク追加">＋</button>
+
+<nav class="tabs">
+  <button data-v="home" class="on"><span class="ic">🏠</span>ホーム</button>
+  <button data-v="board"><span class="ic">🗂</span>ボード</button>
+  <button data-v="proj"><span class="ic">📁</span>プロジェクト</button>
+</nav>
+
+<div class="sheetwrap" id="sheetwrap"><div class="sheet" id="sheet"></div></div>
+
+<script>
+/* ============ data ============ */
+const LS='taskpilot.v1';
+const STATUSES=[['todo','未着手'],['doing','進行中'],['waiting','待ち'],['done','完了']];
+const uid=()=>Math.random().toString(36).slice(2,10);
+const today=()=>new Date().toISOString().slice(0,10);
+let db=load();
+function load(){
+  try{const d=JSON.parse(localStorage.getItem(LS));if(d&&d.projects)return d;}catch(e){}
+  return seed();
+}
+function save(){localStorage.setItem(LS,JSON.stringify(db));}
+function seed(){
+  const p1=uid(),p2=uid(),p3=uid();
+  const d=(n)=>{const t=new Date();t.setDate(t.getDate()+n);return t.toISOString().slice(0,10)};
+  return {sample:true,projects:[
+    {id:p1,name:'新商品リリース',goal:'秋の新商品をECで発売する',done:'商品ページ公開＋初回10件販売',status:'active',created:today()},
+    {id:p2,name:'Webサイトリニューアル',goal:'会社サイトを刷新して問い合わせを増やす',done:'新サイト公開＋フォーム動作確認',status:'active',created:today()},
+    {id:p3,name:'月次経理',goal:'毎月10日までに前月分を締める',done:'仕訳確定・レポート提出',status:'active',created:today()},
+  ],tasks:[
+    {id:uid(),pid:p1,title:'商品写真の撮影',st:'done',pr:2,due:d(-3),asg:'佐藤',notes:'',up:d(-3)},
+    {id:uid(),pid:p1,title:'商品ページの原稿作成',st:'doing',pr:1,due:d(1),asg:'自分',notes:'競合3社の売り文句を参考に',up:today()},
+    {id:uid(),pid:p1,title:'価格の最終承認',st:'waiting',pr:1,due:d(2),asg:'部長',notes:'承認待ち',up:d(-4)},
+    {id:uid(),pid:p1,title:'発送用資材の発注',st:'todo',pr:3,due:d(7),asg:'',notes:'',up:today()},
+    {id:uid(),pid:p2,title:'ワイヤーフレーム作成',st:'done',pr:2,due:d(-7),asg:'制作会社',notes:'',up:d(-7)},
+    {id:uid(),pid:p2,title:'トップページデザイン確認',st:'doing',pr:2,due:d(3),asg:'自分',notes:'',up:today()},
+    {id:uid(),pid:p2,title:'原稿の社内レビュー',st:'todo',pr:2,due:d(5),asg:'広報',notes:'',up:today()},
+    {id:uid(),pid:p3,title:'領収書の回収',st:'doing',pr:2,due:d(0),asg:'自分',notes:'',up:today()},
+    {id:uid(),pid:p3,title:'会計ソフトへ入力',st:'todo',pr:2,due:d(2),asg:'自分',notes:'',up:today()},
+  ]};
+}
+/* ============ helpers ============ */
+const $=s=>document.querySelector(s);
+const esc=s=>(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const proj=id=>db.projects.find(p=>p.id===id);
+const tasksOf=pid=>db.tasks.filter(t=>t.pid===pid);
+const daysAgo=iso=>Math.floor((Date.now()-new Date(iso+'T00:00'))/864e5);
+function health(p){
+  const ts=tasksOf(p.id).filter(t=>t.st!=='done');
+  if(ts.some(t=>t.due&&t.due<today()))return['r','期限超過あり'];
+  if(ts.some(t=>t.st==='waiting'&&daysAgo(t.up)>=3))return['r','3日以上の待ちあり'];
+  const recent=tasksOf(p.id).some(t=>daysAgo(t.up)<3);
+  if(!recent&&ts.length)return['y','3日以上動きなし'];
+  return['g','順調'];
+}
+/* ============ views ============ */
+let view='home',boardFilter='all';
+function render(){
+  document.querySelectorAll('nav.tabs button').forEach(b=>b.classList.toggle('on',b.dataset.v===view));
+  $('#fab').style.display=view==='proj'?'none':'block';
+  if(view==='home')renderHome();else if(view==='board')renderBoard();else renderProj();
+}
+function sampleBar(){
+  return db.sample?`<div class="samplebar"><span>👋 サンプルデータで動いています。自由に触ってOK</span><button onclick="resetAll()">全部消して始める</button></div>`:'';
+}
+function renderHome(){
+  const act=db.projects.filter(p=>p.status==='active');
+  const d=new Date();
+  const open=db.tasks.filter(t=>t.st!=='done'&&proj(t.pid)&&proj(t.pid).status==='active');
+  const overdue=open.filter(t=>t.due&&t.due<today()).length;
+  let h=sampleBar()+`<div class="today"><span class="date">${d.getMonth()+1}月${d.getDate()}日</span><span class="meta">残タスク ${open.length}件${overdue?` ・ <span style="color:var(--red)">期限超過 ${overdue}件</span>`:''}</span></div>`;
+  if(!act.length)h+=`<div class="empty">プロジェクトがありません。<br>「プロジェクト」タブから追加してください</div>`;
+  for(const p of act){
+    const all=tasksOf(p.id),done=all.filter(t=>t.st==='done').length;
+    const pct=all.length?Math.round(done/all.length*100):0;
+    const[hc,ht]=health(p);
+    const next=all.filter(t=>t.st!=='done'&&t.st!=='waiting').sort((a,b)=>(a.pr-b.pr)||((a.due||'9999')<(b.due||'9999')?-1:1))[0];
+    const waits=all.filter(t=>t.st==='waiting');
+    h+=`<div class="pcard" onclick="openBoardFor('${p.id}')">
+      <div class="top"><span class="dot ${hc}"></span><span class="name">${esc(p.name)}</span><span class="pct">${done}/${all.length}・${pct}%</span></div>
+      <div class="bar"><i style="width:${pct}%"></i></div>
+      <div class="goal"><b>完遂条件</b>${esc(p.done||'未設定')}</div>
+      ${all.length&&done===all.length
+        ?`<div class="donebanner">🎉 全タスク完了！完遂条件を満たしたら…<button onclick="event.stopPropagation();finishProject('${p.id}')">完遂にする</button></div>`
+        :next?`<div class="nextact"><span class="tag">次の一手</span>${esc(next.title)}${next.due?` <span style="color:var(--ink3)">(${next.due.slice(5).replace('-','/')}まで)</span>`:''}</div>`
+        :waits.length?'':`<div class="nextact"><span class="tag">次の一手</span>未着手タスクを追加しましょう</div>`}
+      ${waits.map(w=>`<div class="waitline">⏸ ${esc(w.title)}${w.asg?`（${esc(w.asg)}待ち`:'（待ち'}・${daysAgo(w.up)}日）</div>`).join('')}
+      <div style="margin-top:8px;font-size:11.5px;color:var(--ink3)">${ht}</div>
+    </div>`;
+  }
+  $('#main').innerHTML=h;
+}
+function openBoardFor(pid){boardFilter=pid;view='board';render();}
+function renderBoard(){
+  const act=db.projects.filter(p=>p.status==='active');
+  let h=sampleBar()+`<div class="boardbar"><button class="chip ${boardFilter==='all'?'on':''}" onclick="boardFilter='all';render()">すべて</button>`+
+    act.map(p=>`<button class="chip ${boardFilter===p.id?'on':''}" onclick="boardFilter='${p.id}';render()">${esc(p.name)}</button>`).join('')+`</div><div class="board">`;
+  for(const[st,label]of STATUSES){
+    const ts=db.tasks.filter(t=>t.st===st&&(boardFilter==='all'||t.pid===boardFilter)&&proj(t.pid)&&proj(t.pid).status==='active')
+      .sort((a,b)=>(a.pr-b.pr)||((a.due||'9999')<(b.due||'9999')?-1:1));
+    h+=`<div class="col" data-st="${st}" ondragover="dragOver(event)" ondragleave="this.classList.remove('over')" ondrop="drop(event,'${st}')">
+      <h3>${label}<span class="cnt">${ts.length}</span></h3>`+
+      ts.map(t=>tcard(t,st)).join('')+`</div>`;
+  }
+  h+='</div>';
+  $('#main').innerHTML=h;
+}
+function tcard(t,st){
+  const p=proj(t.pid);
+  const over=t.due&&t.due<today()&&st!=='done';
+  const i=STATUSES.findIndex(s=>s[0]===st);
+  const mv=[];
+  if(i>0)mv.push(`<button onclick="event.stopPropagation();moveTask('${t.id}','${STATUSES[i-1][0]}')">◀ ${STATUSES[i-1][1]}</button>`);
+  if(i<3)mv.push(`<button onclick="event.stopPropagation();moveTask('${t.id}','${STATUSES[i+1][0]}')">${STATUSES[i+1][1]} ▶</button>`);
+  return `<div class="tcard" draggable="true" ondragstart="dragStart(event,'${t.id}')" ondragend="this.classList.remove('drag')" onclick="taskSheet('${t.id}')">
+    <div class="t">${esc(t.title)}</div>
+    <div class="m">
+      ${boardFilter==='all'&&p?`<span class="badge proj">${esc(p.name)}</span>`:''}
+      ${t.pr===1?'<span class="badge p1">高</span>':t.pr===2?'<span class="badge p2">中</span>':''}
+      ${t.due?`<span class="badge due ${over?'over':''}">📅 ${t.due.slice(5).replace('-','/')}</span>`:''}
+      ${st==='waiting'?`<span class="badge wait">⏸ ${daysAgo(t.up)}日</span>`:''}
+      ${t.asg?`<span class="badge due">👤 ${esc(t.asg)}</span>`:''}
+    </div>
+    <div class="mv">${mv.join('')}</div>
+  </div>`;
+}
+function renderProj(){
+  let h=sampleBar();
+  const act=db.projects.filter(p=>p.status==='active'),rest=db.projects.filter(p=>p.status!=='active');
+  h+=`<h2 class="sec">進行中</h2>`;
+  h+=act.map(p=>{const a=tasksOf(p.id);const dn=a.filter(t=>t.st==='done').length;
+    return `<div class="projrow" onclick="projSheet('${p.id}')"><span class="dot ${health(p)[0]}"></span><span class="nm">${esc(p.name)}</span><span class="st">${dn}/${a.length}</span></div>`}).join('')||'<div class="empty">なし</div>';
+  if(rest.length){h+=`<h2 class="sec">完遂・停止</h2>`+rest.map(p=>`<div class="projrow dim" onclick="projSheet('${p.id}')"><span class="nm">${p.status==='done'?'🎉 ':''}${esc(p.name)}</span><span class="st">${p.status==='done'?'完遂':'停止中'}</span></div>`).join('');}
+  h+=`<div class="btns"><button class="btn pri" onclick="projSheet()">＋ プロジェクトを追加</button></div>`;
+  $('#main').innerHTML=h;
+}
+/* ============ dnd / move ============ */
+let dragId=null;
+function dragStart(e,id){dragId=id;e.target.classList.add('drag');e.dataTransfer.effectAllowed='move';}
+function dragOver(e){e.preventDefault();e.currentTarget.classList.add('over');}
+function drop(e,st){e.preventDefault();e.currentTarget.classList.remove('over');if(dragId)moveTask(dragId,st);dragId=null;}
+function moveTask(id,st){const t=db.tasks.find(t=>t.id===id);if(!t)return;t.st=st;t.up=today();save();render();}
+/* ============ sheets ============ */
+function openSheet(html){$('#sheet').innerHTML=html;$('#sheetwrap').classList.add('open');}
+function closeSheet(){$('#sheetwrap').classList.remove('open');}
+$('#sheetwrap').addEventListener('click',e=>{if(e.target.id==='sheetwrap')closeSheet();});
+
+function taskSheet(id){
+  const t=id?db.tasks.find(t=>t.id===id):null;
+  const act=db.projects.filter(p=>p.status==='active');
+  if(!act.length){alert('先にプロジェクトを追加してください');return;}
+  const defPid=t?t.pid:(boardFilter!=='all'?boardFilter:act[0].id);
+  openSheet(`<h3>${t?'タスクを編集':'タスクを追加'}</h3>
+  <div class="f"><label>タスク名</label><input id="f_title" value="${esc(t?.title||'')}" placeholder="例：見積書を送る"></div>
+  <div class="frow">
+    <div class="f"><label>プロジェクト</label><select id="f_pid">${act.map(p=>`<option value="${p.id}" ${p.id===defPid?'selected':''}>${esc(p.name)}</option>`).join('')}</select></div>
+    <div class="f"><label>状態</label><select id="f_st">${STATUSES.map(([v,l])=>`<option value="${v}" ${t&&t.st===v?'selected':''}>${l}</option>`).join('')}</select></div>
+  </div>
+  <div class="frow">
+    <div class="f"><label>優先度</label><select id="f_pr"><option value="1" ${t?.pr===1?'selected':''}>高</option><option value="2" ${!t||t.pr===2?'selected':''}>中</option><option value="3" ${t?.pr===3?'selected':''}>低</option></select></div>
+    <div class="f"><label>期限</label><input type="date" id="f_due" value="${t?.due||''}"></div>
+  </div>
+  <div class="f"><label>担当（待ちの相手）</label><input id="f_asg" value="${esc(t?.asg||'')}" placeholder="例：自分／山田さん／先方"></div>
+  <div class="f"><label>メモ</label><textarea id="f_notes">${esc(t?.notes||'')}</textarea></div>
+  <div class="btns">
+    ${t?`<button class="btn danger" onclick="delTask('${t.id}')">削除</button>`:''}
+    <button class="btn sec" onclick="closeSheet()">閉じる</button>
+    <button class="btn pri" onclick="saveTask('${t?.id||''}')">保存</button>
+  </div>`);
+}
+function saveTask(id){
+  const title=$('#f_title').value.trim();if(!title){alert('タスク名を入れてください');return;}
+  const v={title,pid:$('#f_pid').value,st:$('#f_st').value,pr:+$('#f_pr').value,due:$('#f_due').value,asg:$('#f_asg').value.trim(),notes:$('#f_notes').value,up:today()};
+  if(id){Object.assign(db.tasks.find(t=>t.id===id),v);}else{db.tasks.push({id:uid(),...v});}
+  save();closeSheet();render();
+}
+function delTask(id){if(!confirm('このタスクを削除しますか？'))return;db.tasks=db.tasks.filter(t=>t.id!==id);save();closeSheet();render();}
+
+function projSheet(id){
+  const p=id?proj(id):null;
+  openSheet(`<h3>${p?'プロジェクトを編集':'プロジェクトを追加'}</h3>
+  <div class="f"><label>プロジェクト名</label><input id="p_name" value="${esc(p?.name||'')}" placeholder="例：新店舗オープン"></div>
+  <div class="f"><label>ゴール（何のためにやる？）</label><input id="p_goal" value="${esc(p?.goal||'')}" placeholder="例：12月に2号店を開店する"></div>
+  <div class="f"><label>完遂条件（どうなったら終わり？）</label><input id="p_done" value="${esc(p?.done||'')}" placeholder="例：開店＋初月売上100万円"></div>
+  ${p?`<div class="f"><label>状態</label><select id="p_status"><option value="active" ${p.status==='active'?'selected':''}>進行中</option><option value="paused" ${p.status==='paused'?'selected':''}>停止</option><option value="done" ${p.status==='done'?'selected':''}>🎉 完遂</option></select></div>`:''}
+  <div class="btns">
+    ${p?`<button class="btn danger" onclick="delProj('${p.id}')">削除</button>`:''}
+    <button class="btn sec" onclick="closeSheet()">閉じる</button>
+    <button class="btn pri" onclick="saveProj('${p?.id||''}')">保存</button>
+  </div>`);
+}
+function saveProj(id){
+  const name=$('#p_name').value.trim();if(!name){alert('プロジェクト名を入れてください');return;}
+  if(id){const p=proj(id);Object.assign(p,{name,goal:$('#p_goal').value.trim(),done:$('#p_done').value.trim(),status:$('#p_status').value});}
+  else{db.projects.push({id:uid(),name,goal:$('#p_goal').value.trim(),done:$('#p_done').value.trim(),status:'active',created:today()});}
+  save();closeSheet();render();
+}
+function delProj(id){if(!confirm('プロジェクトと中のタスクを全部削除します。よろしいですか？'))return;db.projects=db.projects.filter(p=>p.id!==id);db.tasks=db.tasks.filter(t=>t.pid!==id);save();closeSheet();render();}
+function finishProject(id){const p=proj(id);if(!confirm(`「${p.name}」を完遂にしますか？🎉`))return;p.status='done';save();render();}
+
+function settingsSheet(){
+  openSheet(`<h3>設定・データ</h3>
+  <div class="settings-list">
+    <button class="btn sec" onclick="exportJson()">📤 データを書き出す（JSON）</button>
+    <button class="btn sec" onclick="$('#importFile').click()">📥 データを読み込む</button>
+    <button class="btn danger" style="flex:1" onclick="resetAll()">🗑 全データを削除してやり直す</button>
+  </div>
+  <input type="file" id="importFile" accept=".json" style="display:none" onchange="importJson(this)">
+  <p style="font-size:12px;color:var(--ink3);margin-top:14px">データはこの端末のブラウザ内にだけ保存されます。機種変更や共有はJSON書き出しで。<br>スマホでは共有メニューの「ホーム画面に追加」でアプリとして使えます。</p>
+  <div class="btns"><button class="btn sec" onclick="closeSheet()">閉じる</button></div>`);
+}
+function exportJson(){
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(new Blob([JSON.stringify(db,null,2)],{type:'application/json'}));
+  a.download=`taskpilot_${today()}.json`;a.click();
+}
+function importJson(inp){
+  const f=inp.files[0];if(!f)return;
+  const r=new FileReader();
+  r.onload=()=>{try{const d=JSON.parse(r.result);if(!d.projects||!d.tasks)throw 0;db=d;save();closeSheet();render();}catch(e){alert('読み込めませんでした（形式が違います）');}};
+  r.readAsText(f);
+}
+function resetAll(){
+  if(!confirm('全データを削除して空の状態から始めます。よろしいですか？'))return;
+  db={sample:false,projects:[],tasks:[]};save();closeSheet();render();
+}
+/* ============ wire ============ */
+document.querySelectorAll('nav.tabs button').forEach(b=>b.onclick=()=>{view=b.dataset.v;render();});
+$('#fab').onclick=()=>taskSheet();
+$('#settingsBtn').onclick=settingsSheet;
+render();
+if('serviceWorker'in navigator)navigator.serviceWorker.register('sw.js').catch(()=>{});
+</script>
+</body>
+</html>
