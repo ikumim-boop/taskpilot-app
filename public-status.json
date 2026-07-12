@@ -1,6 +1,6 @@
 {
   "generated_by": "PMリグルド",
-  "updated_at": "2026-07-12T22:41:13.402Z",
+  "updated_at": "2026-07-12T23:15:04.659Z",
   "projects": [
     {
       "id": "autousd-b-model",
@@ -9,12 +9,12 @@
       "health": "y",
       "goal": "月$5,000 USD（30〜36ヶ月・CEO承認済 2026-07-08）",
       "done_criteria": "月$5,000 USDを3ヶ月連続達成",
-      "next_action": "❹❺とも実装済み・ローカルでは有効化済み（GA4測定ID・Klook/Viatorアフィリ6件enabled:true、npm run build確認済み）だが未commit＝本番は旧状態のまま。commit&pushで本番反映されるがCEO確認後に実行",
+      "next_action": "❹❺とも実装済み・commit&push待ちとされていたが、裏取りするとGA4計測タグ（app/[locale]/layout.tsx）とaffiliate_links.jsonのenabled:trueエントリは既にorigin/mainにマージ済みと判明（コミット2450658・9488d28ほか）。台帳の『未commit』表記は古い可能性がある。本番(Netlify)で実際にGA4が計測できているかはダッシュボード確認が必要（AI側からは検証不可）。CEO確認後、残りの未反映分があればcommit&push",
       "waiting_on_ceo": [
         "❷外注パイロット・❼税理士確認の判断（説明待ち）",
-        "🆕 mainへのcommit&push許可（GA4計測タグ＋Klook/Viatorアフィリ6件が本番で有効化される）"
+        "GA4計測が本番(Netlify)で実際に動いているかの確認（GA4管理画面）。動いていれば🆕のcommit&push待ち項目はクローズ可能"
       ],
-      "last_checked": "2026-07-12"
+      "last_checked": "2026-07-13"
     },
     {
       "id": "japan-trip-planner",
@@ -27,7 +27,7 @@
       "waiting_on_ceo": [
         "Canvaアプリでのページ結合＋ナビリンク貼り（AI不可領域）"
       ],
-      "last_checked": "2026-07-12"
+      "last_checked": "2026-07-13"
     },
     {
       "id": "dokodemo-blog-seo",
@@ -36,12 +36,12 @@
       "health": "r",
       "goal": "独自ドメインでSEO評価を蓄積しアフィリエイト審査を通す",
       "done_criteria": "docs/SEO_DOMAIN_PLAYBOOK.md の残タスク全消化＋主要アフィリ審査合格",
-      "next_action": "hiroshima-miyajima（待ち5日目・catch-up推奨）／tokyo-skytree（待ち2日目）ともCEOのja内容レビュー待ち。既存2件のレビューが進めばFushimi Inari（#4・affiliate_status:ready）着手可",
+      "next_action": "origin/mainで裏取り：Fushimi Inari(#4)・Osaka Castle(#6)は既にpublished済み（次の一手ではなく完了済み・台帳の旧next_actionは古かった）。残るin_reviewはhiroshima-miyajima（branch push 2026-07-07・待ち6日目）とtokyo-skytree（branch push 2026-07-10・待ち3日目）のみ、ともCEOのja内容レビュー待ち。両方承認後の次の一手はTodai-ji（#7・affiliate_status:needs_registration）だが、これはKlook/Viator/GetYourGuideの実機確認にClaude in Chromeが必須（PIPELINE.md記載）でheadless巡回では着手不可",
       "waiting_on_ceo": [
-        "🔴 hiroshima-miyajima記事（in_review・待ち5日目）の内容承認→承認後en/ko/zh-TW翻訳着手",
-        "tokyo-skytree記事（in_review・待ち2日目）の内容承認"
+        "🔴 hiroshima-miyajima記事（in_review・待ち6日目・5→6日で延伸）の内容承認→承認後en/ko/zh-TW翻訳着手",
+        "tokyo-skytree記事（in_review・待ち3日目）の内容承認"
       ],
-      "last_checked": "2026-07-12"
+      "last_checked": "2026-07-13"
     },
     {
       "id": "dokodemo-thai-locale",
@@ -50,35 +50,39 @@
       "health": "g",
       "goal": "全記事にタイ語ロケールを追加（訪日タイ人+23.8%増を踏まえた多言語拡張。CEO決定2026-07-12）",
       "done_criteria": "全公開記事のth.md翻訳完了・サイトth ロケールとして正式公開",
-      "next_action": "Stage2の次の翻訳対象（観光系記事）を選定し、kurobee→content-creator-advocateレビューのフローで継続",
+      "next_action": "origin/mainで裏取り：公開済み全14記事にth.mdが揃っていることを確認済み（catch-up完了）。次の対象はhiroshima-miyajima/tokyo-skytree/kanazawa-takayamaが公開された後になるため、現時点で追加のAI実行タスクなし",
       "waiting_on_ceo": [],
-      "last_checked": "2026-07-12"
+      "last_checked": "2026-07-13"
     },
     {
       "id": "otayorijapan",
-      "name": "Japan Market Pulse（おたよりジャパン・外貨新規事業）",
+      "name": "OtayoriJapan（外貨新規事業・日本ECデータ×英語圏B2B、旧称Japan Market Pulse/Japan Signal）",
       "status": "active",
       "health": "y",
-      "goal": "日本ECデータ×英語圏B2B監視の自動収集・レポート事業（月$200〜500セルフサーブ・通話ゼロ設計。CEO GO 2026-07-11）",
-      "done_criteria": "プロダクト名・ドメイン確定→Vercel/Netlifyデプロイ→Paddle審査合格→初回課金",
-      "next_action": "残る大物（C-1 Proのdata feed実サンプル不在／C-2 sources.yaml再設計／W-1,W-2見込みリストTier再設計／W-5 Pro$499価格根拠）はCEO製品判断 or 新規スプリント規模のため提案止まり。CEO判断待ち",
+      "goal": "日本ECデータ×英語圏B2B監視の週次英語ブリーフ事業（Starter$249/Pro$499・通話ゼロ設計。CEO GO 2026-07-11）",
+      "done_criteria": "ゲート①(月3:金額提示会話3件)→②(月6:有料1社)→③(月12:MRR$1,000)→月18:$5,000",
+      "next_action": "本番公開完了（https://otayorijapan.com）: 商標衝突3回回避しOtayoriJapanで確定・赤白金デザイン刷新・顧客ストーリー写真B/C(ChatGPT生成)・サンプルレポート公開(/sample-report)・メール登録はGoogleフォーム配線（テスト送信で記録実証）。Paddleは有料客が見えてからに保留（CEO 2026-07-12）。現在ゲート①=tier1 36社へのアウトリーチ準備完了、CEO本人の送信フェーズ待ち",
       "waiting_on_ceo": [
-        "プロダクト名・ドメイン確定",
-        "Vercelデプロイ実行／Paddle審査申請",
-        "Proティアの扱い（実サンプル無しで公開 vs 当面Coming soon化）"
+        "アウトリーチ連絡先の質: tier1 36社は全て問い合わせフォーム経由。上位10社にLinkedIn/創業者メールを追加リサーチするか(推奨) or フォームのまま回すか",
+        "Google Formの回答をスプレッドシート化（フォーム画面「スプレッドシートにリンク」）",
+        "画像カットA(情報の壁)をProblemに使うか保留か。ロゴ/ファビコン未整備"
       ],
-      "last_checked": "2026-07-11"
+      "last_checked": "2026-07-12"
     },
     {
       "id": "goal-guard-validation",
       "name": "ゴール漂流の番人（マイクロSaaS需要検証・8週間）",
       "status": "active",
-      "health": "g",
+      "health": "r",
       "goal": "「AIに仕事を任せる人のゴール漂流」課題に需要シグナルがあるか、日本語LP＋オーガニック発信のみで検証する（CEO承認 2026-07-12・選択肢2）",
       "done_criteria": "8週間（〜2026-09-06）で判定: 先行予約5件以上=第2ゲート（有料β）へ / 未達or撤退トリガー該当=(c)資産化止まりでクローズ",
-      "next_action": "週次タスク割り表と発信下限N/M（提案: N=16本/M=5万imp）を確定→LP骨子制作（kurobee/benimaru）",
-      "waiting_on_ceo": [],
-      "last_checked": "2026-07-12"
+      "next_action": "🆕発見（2026-07-13巡回）：TaskPilot MVP（PWA・99_Laboratory/TaskPilot/）と、PM台帳からpublic-status.jsonを生成しgithub.com/ikumim-boop/taskpilot-appへ自動pushする仕組み（sync_taskpilot_public.sh・launchd『com.tempest.taskpilot.sync』が巡回後に毎朝自動実行）が構築済み・稼働直前と判明。ただしTempestリポジトリ側では未commit（.gitignore対象外・git resetで消失リスクあり）。LP骨子制作はfinal.md記載どおりN/M（発信本数/imp下限）のCEO合意が前提条件のため、それ抜きでの着手は保留（下記waiting_on_ceo参照）",
+      "waiting_on_ceo": [
+        "🆕🔴 セキュリティ懸念: public-status.jsonにAutoUSDの収益目標・各プロジェクトのnext_action・CEO待ち事項が原文のまま入っており、それが毎朝publicリポジトリに自動pushされる設計になっている。意図した公開範囲か（LPの『リグルド日報サンプル』用に一部だけ見せる設計に絞るべきでは）確認要。security-guardスキルを経由した設計レビューを推奨",
+        "N=◯本・M=◯impの発信下限をCEOの現有発信力に基づき確定（final.md §3の前提条件）",
+        "TaskPilot一式（99_Laboratory/TaskPilot/・00_Central_Raphael/.pm/gen_public_status.mjs等）をTempestリポジトリにcommitするか（現状untracked・過去に類似の未commit消失事故あり）"
+      ],
+      "last_checked": "2026-07-13"
     },
     {
       "id": "mercari-reconciliation",
