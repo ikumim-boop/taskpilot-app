@@ -1,9 +1,60 @@
 {
   "generated_by": "PMリグルド",
-  "updated_at": "2026-07-12T23:15:04.659Z",
+  "updated_at": "2026-07-13T04:52:13.176Z",
+  "pillars": [
+    {
+      "id": "autousd",
+      "name": "AutoUSD",
+      "icon": "💵",
+      "goal": "月$5,000 USD事業計画（30〜36ヶ月・CEO承認済 2026-07-08）",
+      "health": "r",
+      "project_count": 4,
+      "active_project_count": 4,
+      "done": 6,
+      "total": 20,
+      "pct": 30
+    },
+    {
+      "id": "otayorijapan",
+      "name": "OtayoriJapan",
+      "icon": "📊",
+      "goal": "外貨新規事業（日本ECデータ×英語圏B2B・CEO GO 2026-07-11）",
+      "health": "y",
+      "project_count": 1,
+      "active_project_count": 1,
+      "done": 2,
+      "total": 6,
+      "pct": 33
+    },
+    {
+      "id": "goal-guard",
+      "name": "ゴール漂流の番人",
+      "icon": "🧭",
+      "goal": "マイクロSaaS需要検証（8週間・CEO承認 2026-07-12）",
+      "health": "y",
+      "project_count": 1,
+      "active_project_count": 1,
+      "done": 2,
+      "total": 6,
+      "pct": 33
+    },
+    {
+      "id": "ops",
+      "name": "社内オペレーション",
+      "icon": "🔧",
+      "goal": "業務効率化・自動化",
+      "health": null,
+      "project_count": 1,
+      "active_project_count": 0,
+      "done": 0,
+      "total": 0,
+      "pct": 0
+    }
+  ],
   "projects": [
     {
       "id": "autousd-b-model",
+      "pillar": "autousd",
       "name": "AutoUSD 月$5,000事業計画",
       "status": "active",
       "health": "y",
@@ -14,10 +65,46 @@
         "❷外注パイロット・❼税理士確認の判断（説明待ち）",
         "GA4計測が本番(Netlify)で実際に動いているかの確認（GA4管理画面）。動いていれば🆕のcommit&push待ち項目はクローズ可能"
       ],
+      "milestones": {
+        "items": [
+          {
+            "done": true,
+            "label": "GA4計測タグ実装（origin/mainマージ済み）"
+          },
+          {
+            "done": true,
+            "label": "アフィリエイトリンク自動挿入の仕組み実装（origin/mainマージ済み）"
+          },
+          {
+            "done": false,
+            "label": "GA4が本番で実際に計測できているか確認"
+          },
+          {
+            "done": false,
+            "label": "外注パイロット・税理士確認の判断"
+          },
+          {
+            "done": false,
+            "label": "月$5,000 初達成（1ヶ月目）"
+          },
+          {
+            "done": false,
+            "label": "2ヶ月連続達成"
+          },
+          {
+            "done": false,
+            "label": "3ヶ月連続達成（完了）"
+          }
+        ],
+        "done": 2,
+        "total": 7,
+        "pct": 29
+      },
       "last_checked": "2026-07-13"
     },
     {
       "id": "japan-trip-planner",
+      "pillar": "autousd",
       "name": "Japan Trip Planner（AutoUSD第1弾商品）",
       "status": "active",
       "health": "y",
@@ -27,10 +114,38 @@
       "waiting_on_ceo": [
         "Canvaアプリでのページ結合＋ナビリンク貼り（AI不可領域）"
       ],
+      "milestones": {
+        "items": [
+          {
+            "done": true,
+            "label": "全ページ画像生成完了（v3版）"
+          },
+          {
+            "done": false,
+            "label": "Canvaページ結合"
+          },
+          {
+            "done": false,
+            "label": "ナビリンク貼り"
+          },
+          {
+            "done": false,
+            "label": "Etsy出品"
+          },
+          {
+            "done": false,
+            "label": "初売上"
+          }
+        ],
+        "done": 1,
+        "total": 5,
+        "pct": 20
+      },
       "last_checked": "2026-07-13"
     },
     {
       "id": "dokodemo-blog-seo",
+      "pillar": "autousd",
       "name": "DokodemoJapan ブログ・SEO・アフィリ審査",
       "status": "active",
       "health": "r",
@@ -41,10 +156,42 @@
         "🔴 hiroshima-miyajima記事（in_review・待ち6日目・5→6日で延伸）の内容承認→承認後en/ko/zh-TW翻訳着手",
         "tokyo-skytree記事（in_review・待ち3日目）の内容承認"
       ],
+      "milestones": {
+        "items": [
+          {
+            "done": true,
+            "label": "Fushimi Inari（#4）公開済み"
+          },
+          {
+            "done": true,
+            "label": "Osaka Castle（#6）公開済み"
+          },
+          {
+            "done": false,
+            "label": "hiroshima-miyajima 内容承認・公開"
+          },
+          {
+            "done": false,
+            "label": "tokyo-skytree 内容承認・公開"
+          },
+          {
+            "done": false,
+            "label": "Todai-ji（#7）記事化・アフィリ登録"
+          },
+          {
+            "done": false,
+            "label": "主要アフィリ審査合格"
+          }
+        ],
+        "done": 2,
+        "total": 6,
+        "pct": 33
+      },
       "last_checked": "2026-07-13"
     },
     {
       "id": "dokodemo-thai-locale",
+      "pillar": "autousd",
       "name": "DokodemoJapan タイ語(th)ロケール展開",
       "status": "active",
       "health": "g",
@@ -52,10 +199,26 @@
       "done_criteria": "全公開記事のth.md翻訳完了・サイトth ロケールとして正式公開",
       "next_action": "origin/mainで裏取り：公開済み全14記事にth.mdが揃っていることを確認済み（catch-up完了）。次の対象はhiroshima-miyajima/tokyo-skytree/kanazawa-takayamaが公開された後になるため、現時点で追加のAI実行タスクなし",
       "waiting_on_ceo": [],
+      "milestones": {
+        "items": [
+          {
+            "done": true,
+            "label": "既存公開記事14/14の翻訳キャッチアップ完了"
+          },
+          {
+            "done": false,
+            "label": "サイトthロケールとして正式リリース（ナビ等含む）"
+          }
+        ],
+        "done": 1,
+        "total": 2,
+        "pct": 50
+      },
       "last_checked": "2026-07-13"
     },
     {
       "id": "otayorijapan",
+      "pillar": "otayorijapan",
       "name": "OtayoriJapan（外貨新規事業・日本ECデータ×英語圏B2B、旧称Japan Market Pulse/Japan Signal）",
       "status": "active",
       "health": "y",
@@ -67,25 +230,87 @@
         "Google Formの回答をスプレッドシート化（フォーム画面「スプレッドシートにリンク」）",
         "画像カットA(情報の壁)をProblemに使うか保留か。ロゴ/ファビコン未整備"
       ],
+      "milestones": {
+        "items": [
+          {
+            "done": true,
+            "label": "本番サイト公開（otayorijapan.com）"
+          },
+          {
+            "done": true,
+            "label": "サンプルレポート・登録導線整備"
+          },
+          {
+            "done": false,
+            "label": "ゲート①: 金額提示会話3件"
+          },
+          {
+            "done": false,
+            "label": "ゲート②: 有料1社"
+          },
+          {
+            "done": false,
+            "label": "ゲート③: MRR$1,000"
+          },
+          {
+            "done": false,
+            "label": "ゲート④: 月$5,000"
+          }
+        ],
+        "done": 2,
+        "total": 6,
+        "pct": 33
+      },
       "last_checked": "2026-07-12"
     },
     {
       "id": "goal-guard-validation",
+      "pillar": "goal-guard",
       "name": "ゴール漂流の番人（マイクロSaaS需要検証・8週間）",
       "status": "active",
-      "health": "r",
+      "health": "y",
       "goal": "「AIに仕事を任せる人のゴール漂流」課題に需要シグナルがあるか、日本語LP＋オーガニック発信のみで検証する（CEO承認 2026-07-12・選択肢2）",
       "done_criteria": "8週間（〜2026-09-06）で判定: 先行予約5件以上=第2ゲート（有料β）へ / 未達or撤退トリガー該当=(c)資産化止まりでクローズ",
       "next_action": "🆕発見（2026-07-13巡回）：TaskPilot MVP（PWA・99_Laboratory/TaskPilot/）と、PM台帳からpublic-status.jsonを生成しgithub.com/ikumim-boop/taskpilot-appへ自動pushする仕組み（sync_taskpilot_public.sh・launchd『com.tempest.taskpilot.sync』が巡回後に毎朝自動実行）が構築済み・稼働直前と判明。ただしTempestリポジトリ側では未commit（.gitignore対象外・git resetで消失リスクあり）。LP骨子制作はfinal.md記載どおりN/M（発信本数/imp下限）のCEO合意が前提条件のため、それ抜きでの着手は保留（下記waiting_on_ceo参照）",
       "waiting_on_ceo": [
-        "🆕🔴 セキュリティ懸念: public-status.jsonにAutoUSDの収益目標・各プロジェクトのnext_action・CEO待ち事項が原文のまま入っており、それが毎朝publicリポジトリに自動pushされる設計になっている。意図した公開範囲か（LPの『リグルド日報サンプル』用に一部だけ見せる設計に絞るべきでは）確認要。security-guardスキルを経由した設計レビューを推奨",
-        "N=◯本・M=◯impの発信下限をCEOの現有発信力に基づき確定（final.md §3の前提条件）",
-        "TaskPilot一式（99_Laboratory/TaskPilot/・00_Central_Raphael/.pm/gen_public_status.mjs等）をTempestリポジトリにcommitするか（現状untracked・過去に類似の未commit消失事故あり）"
+        "N=◯本・M=◯impの発信下限をCEOの現有発信力に基づき確定（final.md §3の前提条件）"
       ],
+      "milestones": {
+        "items": [
+          {
+            "done": true,
+            "label": "TaskPilot MVP（PWA）構築・実データ連携"
+          },
+          {
+            "done": true,
+            "label": "公開サイト・自動同期パイプライン稼働（毎朝8:15）"
+          },
+          {
+            "done": false,
+            "label": "週次タスク割り表・発信下限N/M確定"
+          },
+          {
+            "done": false,
+            "label": "LP骨子制作"
+          },
+          {
+            "done": false,
+            "label": "発信開始（8週間カウント開始）"
+          },
+          {
+            "done": false,
+            "label": "先行予約5件到達判定（〜2026-09-06）"
+          }
+        ],
+        "done": 2,
+        "total": 6,
+        "pct": 33
+      },
       "last_checked": "2026-07-13"
     },
     {
       "id": "mercari-reconciliation",
+      "pillar": "ops",
       "name": "メルカリ外注費 検算自動化（GAS）",
       "status": "paused",
       "health": null,
@@ -95,6 +320,25 @@
       "waiting_on_ceo": [
         "検算マスターのApps Scriptで setupSettingSheet を1回実行（初回OAuth認可・ブラウザ操作）"
       ],
+      "milestones": {
+        "items": [
+          {
+            "done": true,
+            "label": "V1実装・納品（Code.gs・検算マスター）"
+          },
+          {
+            "done": false,
+            "label": "CEOの初回OAuth認可"
+          },
+          {
+            "done": false,
+            "label": "本番シートで初回実行検証"
+          }
+        ],
+        "done": 1,
+        "total": 3,
+        "pct": 33
+      },
       "last_checked": "2026-07-08"
     }
   ]
