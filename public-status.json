@@ -1,30 +1,30 @@
 {
   "generated_by": "PMリグルド",
-  "updated_at": "2026-07-13T23:15:05.785Z",
+  "updated_at": "2026-07-14T23:15:05.462Z",
   "pillars": [
     {
       "id": "autousd",
       "name": "AutoUSD",
       "icon": "💵",
       "goal": "月$5,000 USD事業計画（30〜36ヶ月・CEO承認済 2026-07-08）",
-      "health": "r",
+      "health": "y",
       "project_count": 4,
       "active_project_count": 4,
-      "done": 6,
-      "total": 20,
-      "pct": 30
+      "done": 10,
+      "total": 25,
+      "pct": 40
     },
     {
       "id": "otayorijapan",
       "name": "OtayoriJapan",
       "icon": "📊",
       "goal": "外貨新規事業（日本ECデータ×英語圏B2B・CEO GO 2026-07-11）",
-      "health": "y",
+      "health": "r",
       "project_count": 1,
       "active_project_count": 1,
-      "done": 2,
-      "total": 6,
-      "pct": 33
+      "done": 3,
+      "total": 8,
+      "pct": 38
     },
     {
       "id": "goal-guard",
@@ -34,9 +34,9 @@
       "health": "y",
       "project_count": 1,
       "active_project_count": 1,
-      "done": 2,
-      "total": 6,
-      "pct": 33
+      "done": 3,
+      "total": 7,
+      "pct": 43
     },
     {
       "id": "ops",
@@ -60,10 +60,10 @@
       "health": "y",
       "goal": "月$5,000 USD（30〜36ヶ月・CEO承認済 2026-07-08）",
       "done_criteria": "月$5,000 USDを3ヶ月連続達成",
-      "next_action": "❹❺とも実装済み・commit&push待ちとされていたが、裏取りするとGA4計測タグ（app/[locale]/layout.tsx）とaffiliate_links.jsonのenabled:trueエントリは既にorigin/mainにマージ済みと判明（コミット2450658・9488d28ほか）。台帳の『未commit』表記は古い可能性がある。本番(Netlify)で実際にGA4が計測できているかはダッシュボード確認が必要（AI側からは検証不可）。CEO確認後、残りの未反映分があればcommit&push",
+      "next_action": "2026-07-15巡回で再確認：GA4修正commit(13e5ba0)後、本日までに新規デプロイが5回成功しているが（最終17:16 UTC）、本番HTML実測（python urllibで直接取得・grep）は引き続きgtag.js/測定IDが0件＝GitHub SecretsへのNEXT_PUBLIC_GA_ID登録がまだ行われていないと推定。AI側の残タスクなし、CEOの登録待ち（1日経過）",
       "waiting_on_ceo": [
         "❷外注パイロット・❼税理士確認の判断（説明待ち）",
-        "GA4計測が本番(Netlify)で実際に動いているかの確認（GA4管理画面）。動いていれば🆕のcommit&push待ち項目はクローズ可能"
+        "GitHub Actions Secretsに NEXT_PUBLIC_GA_ID を登録（gh secret set NEXT_PUBLIC_GA_ID、値は.env.localのG-KXD2KB64B8）。⏸待ち1日目。登録後は次回デプロイで自動反映されるので、それ以降にPMが本番再確認する"
       ],
       "milestones": {
         "items": [
@@ -76,8 +76,16 @@
             "label": "アフィリエイトリンク自動挿入の仕組み実装（origin/mainマージ済み）"
           },
           {
+            "done": true,
+            "label": "Cloudflare自動デプロイにNEXT_PUBLIC_GA_ID配線（commit 13e5ba0・2026-07-14）"
+          },
+          {
             "done": false,
-            "label": "GA4が本番で実際に計測できているか確認"
+            "label": "GitHub SecretsにGA4測定ID登録（CEO）"
+          },
+          {
+            "done": false,
+            "label": "GA4が本番で実際に計測できているか再確認（登録後）"
           },
           {
             "done": false,
@@ -96,11 +104,11 @@
             "label": "3ヶ月連続達成（完了）"
           }
         ],
-        "done": 2,
-        "total": 7,
-        "pct": 29
+        "done": 3,
+        "total": 9,
+        "pct": 33
       },
-      "last_checked": "2026-07-13"
+      "last_checked": "2026-07-15"
     },
     {
       "id": "japan-trip-planner",
@@ -141,20 +149,20 @@
         "total": 5,
         "pct": 20
       },
-      "last_checked": "2026-07-13"
+      "last_checked": "2026-07-15"
     },
     {
       "id": "dokodemo-blog-seo",
       "pillar": "autousd",
       "name": "DokodemoJapan ブログ・SEO・アフィリ審査",
       "status": "active",
-      "health": "r",
+      "health": "y",
       "goal": "独自ドメインでSEO評価を蓄積しアフィリエイト審査を通す",
       "done_criteria": "docs/SEO_DOMAIN_PLAYBOOK.md の残タスク全消化＋主要アフィリ審査合格",
-      "next_action": "origin/mainで裏取り：Fushimi Inari(#4)・Osaka Castle(#6)は既にpublished済み（次の一手ではなく完了済み・台帳の旧next_actionは古かった）。残るin_reviewはhiroshima-miyajima（branch push 2026-07-07・待ち6日目）とtokyo-skytree（branch push 2026-07-10・待ち3日目）のみ、ともCEOのja内容レビュー待ち。両方承認後の次の一手はTodai-ji（#7・affiliate_status:needs_registration）だが、これはKlook/Viator/GetYourGuideの実機確認にClaude in Chromeが必須（PIPELINE.md記載）でheadless巡回では着手不可",
+      "next_action": "2026-07-15巡回で確認：PR #56（tokyo-sensoji翻訳）は昨日巡回後にマージ済み（2026-07-14 09:45 JST）、facility_backlog.jsonもpublishedに反映済みと確認（milestone達成）。なお昨日「hiroshima-miyajima等がfacility_backlog未反映」と懸念した件は誤解と判明：hiroshima-miyajima/hokkaido-nature-guide/okinawa-nature-guide/osaka-kuromon-ichibaはfacility_backlog対象外の別シリーズ（hub-and-spoke、pipeline_state.json管理）で正常。新たにosaka-kuromon-ichiba翻訳PR #77がオープン（2026-07-14 17:19時点、Vercelビルド成功・content-creator-advocate指摘は事前反映済みでクリーンな状態）、CEOレビュー・マージ待ち。tokyo-skytreeは変化なくin_review継続。AI側の残タスクなし",
       "waiting_on_ceo": [
-        "🔴 hiroshima-miyajima記事（in_review・待ち6日目・5→6日で延伸）の内容承認→承認後en/ko/zh-TW翻訳着手",
-        "tokyo-skytree記事（in_review・待ち3日目）の内容承認"
+        "PR #77（osaka-kuromon-ichiba翻訳・チェック済みクリーン）のレビュー・マージ",
+        "tokyo-skytree記事の内容承認（facility_backlogをpublishedへ更新するか判断）"
       ],
       "milestones": {
         "items": [
@@ -167,12 +175,20 @@
             "label": "Osaka Castle（#6）公開済み"
           },
           {
-            "done": false,
-            "label": "hiroshima-miyajima 内容承認・公開"
+            "done": true,
+            "label": "hiroshima-miyajima 翻訳・mainマージ済み"
+          },
+          {
+            "done": true,
+            "label": "tokyo-sensoji PR#56 マージ・facility_backlog published反映（2026-07-14）"
           },
           {
             "done": false,
-            "label": "tokyo-skytree 内容承認・公開"
+            "label": "tokyo-skytree 内容承認・facility_backlog公開反映"
+          },
+          {
+            "done": false,
+            "label": "osaka-kuromon-ichiba PR#77 レビュー・マージ"
           },
           {
             "done": false,
@@ -183,11 +199,11 @@
             "label": "主要アフィリ審査合格"
           }
         ],
-        "done": 2,
-        "total": 6,
-        "pct": 33
+        "done": 4,
+        "total": 8,
+        "pct": 50
       },
-      "last_checked": "2026-07-13"
+      "last_checked": "2026-07-15"
     },
     {
       "id": "dokodemo-thai-locale",
@@ -197,7 +213,7 @@
       "health": "g",
       "goal": "全記事にタイ語ロケールを追加（訪日タイ人+23.8%増を踏まえた多言語拡張。CEO決定2026-07-12）",
       "done_criteria": "全公開記事のth.md翻訳完了・サイトth ロケールとして正式公開",
-      "next_action": "origin/mainで裏取り：公開済み全14記事にth.mdが揃っていることを確認済み（catch-up完了）。次の対象はhiroshima-miyajima/tokyo-skytree/kanazawa-takayamaが公開された後になるため、現時点で追加のAI実行タスクなし",
+      "next_action": "新規記事（kyoto-kiyomizudera・nara-todaiji・hiroshima-miyajima等）は承認翻訳フロー(approved-blog-translation.yml)がth.mdも自動生成するため追いキャッチアップ不要になった。現時点で追加のAI実行タスクなし",
       "waiting_on_ceo": [],
       "milestones": {
         "items": [
@@ -206,26 +222,31 @@
             "label": "既存公開記事14/14の翻訳キャッチアップ完了"
           },
           {
+            "done": true,
+            "label": "新規記事は自動翻訳フローでth.md込み生成される体制に移行"
+          },
+          {
             "done": false,
             "label": "サイトthロケールとして正式リリース（ナビ等含む）"
           }
         ],
-        "done": 1,
-        "total": 2,
-        "pct": 50
+        "done": 2,
+        "total": 3,
+        "pct": 67
       },
-      "last_checked": "2026-07-13"
+      "last_checked": "2026-07-15"
     },
     {
       "id": "otayorijapan",
       "pillar": "otayorijapan",
       "name": "OtayoriJapan（外貨新規事業・日本ECデータ×英語圏B2B、旧称Japan Market Pulse/Japan Signal）",
       "status": "active",
-      "health": "y",
+      "health": "r",
       "goal": "日本ECデータ×英語圏B2B監視の週次英語ブリーフ事業（Starter$249/Pro$499・通話ゼロ設計。CEO GO 2026-07-11）",
       "done_criteria": "ゲート①(月3:金額提示会話3件)→②(月6:有料1社)→③(月12:MRR$1,000)→月18:$5,000",
-      "next_action": "本番公開完了（https://otayorijapan.com）: 商標衝突3回回避しOtayoriJapanで確定・赤白金デザイン刷新・顧客ストーリー写真B/C(ChatGPT生成)・サンプルレポート公開(/sample-report)・メール登録はGoogleフォーム配線（テスト送信で記録実証）。Paddleは有料客が見えてからに保留（CEO 2026-07-12）。現在ゲート①=tier1 36社へのアウトリーチ準備完了、CEO本人の送信フェーズ待ち",
+      "next_action": "🔴2026-07-15巡回で緊急発見：本番サイト https://otayorijapan.com が503エラーで停止中。python urllibで3回リトライ確認、全て503。レスポンスボディは{\"error\":\"usage_exceeded\",\"message\":\"Usage exceeded\"}（Netlify発行、Server: Netlifyヘッダ確認済み）。/sample-report も同様に503。原因はNetlifyの利用量上限到達と推定（Netlify API/CLIトークンが.envに無くダッシュボード側の詳細確認は不可・AI側で復旧不可）。ゲート①のtier1 36社アウトリーチはCEO未送信のまま停止中のため実害はまだ出ていないが、この状態で送信するとリンク切れ体験になるため送信前に必ず復旧確認が必要",
       "waiting_on_ceo": [
+        "🔴最優先：Netlifyダッシュボードで otayorijapan.com のusage_exceeded原因（帯域/ビルド分/関数呼び出し等）を確認し、プラン変更or待機で復旧すること。復旧後にPMが本番再確認する",
         "アウトリーチ連絡先の質: tier1 36社は全て問い合わせフォーム経由。上位10社にLinkedIn/創業者メールを追加リサーチするか(推奨) or フォームのまま回すか",
         "Google Formの回答をスプレッドシート化（フォーム画面「スプレッドシートにリンク」）",
         "画像カットA(情報の壁)をProblemに使うか保留か。ロゴ/ファビコン未整備"
@@ -239,6 +260,14 @@
           {
             "done": true,
             "label": "サンプルレポート・登録導線整備"
+          },
+          {
+            "done": true,
+            "label": "JapanDataIntel一式のリポジトリcommit（2026-07-14・ff96ebe）"
+          },
+          {
+            "done": false,
+            "label": "🔴本番503復旧（usage_exceeded・2026-07-15発見）"
           },
           {
             "done": false,
@@ -257,11 +286,11 @@
             "label": "ゲート④: 月$5,000"
           }
         ],
-        "done": 2,
-        "total": 6,
-        "pct": 33
+        "done": 3,
+        "total": 8,
+        "pct": 38
       },
-      "last_checked": "2026-07-12"
+      "last_checked": "2026-07-15"
     },
     {
       "id": "goal-guard-validation",
@@ -271,7 +300,7 @@
       "health": "y",
       "goal": "「AIに仕事を任せる人のゴール漂流」課題に需要シグナルがあるか、日本語LP＋オーガニック発信のみで検証する（CEO承認 2026-07-12・選択肢2）",
       "done_criteria": "8週間（〜2026-09-06）で判定: 先行予約5件以上=第2ゲート（有料β）へ / 未達or撤退トリガー該当=(c)資産化止まりでクローズ",
-      "next_action": "🆕発見（2026-07-13巡回）：TaskPilot MVP（PWA・99_Laboratory/TaskPilot/）と、PM台帳からpublic-status.jsonを生成しgithub.com/ikumim-boop/taskpilot-appへ自動pushする仕組み（sync_taskpilot_public.sh・launchd『com.tempest.taskpilot.sync』が巡回後に毎朝自動実行）が構築済み・稼働直前と判明。ただしTempestリポジトリ側では未commit（.gitignore対象外・git resetで消失リスクあり）。LP骨子制作はfinal.md記載どおりN/M（発信本数/imp下限）のCEO合意が前提条件のため、それ抜きでの着手は保留（下記waiting_on_ceo参照）",
+      "next_action": "2026-07-15巡回で確認：taskpilot-sync.logで本日08:15の自動同期も正常完了（push完了）を確認、2026-07-13以降連続稼働中。N/M下限の確定待ちのため、LP骨子制作は引き続き着手保留",
       "waiting_on_ceo": [
         "N=◯本・M=◯impの発信下限をCEOの現有発信力に基づき確定（final.md §3の前提条件）"
       ],
@@ -284,6 +313,10 @@
           {
             "done": true,
             "label": "公開サイト・自動同期パイプライン稼働（毎朝8:15）"
+          },
+          {
+            "done": true,
+            "label": "TaskPilot一式のリポジトリcommit（2026-07-14・f716bd6）"
           },
           {
             "done": false,
@@ -302,11 +335,11 @@
             "label": "先行予約5件到達判定（〜2026-09-06）"
           }
         ],
-        "done": 2,
-        "total": 6,
-        "pct": 33
+        "done": 3,
+        "total": 7,
+        "pct": 43
       },
-      "last_checked": "2026-07-13"
+      "last_checked": "2026-07-15"
     },
     {
       "id": "mercari-reconciliation",
