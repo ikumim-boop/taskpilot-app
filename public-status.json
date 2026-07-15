@@ -1,6 +1,6 @@
 {
   "generated_by": "PMリグルド",
-  "updated_at": "2026-07-14T23:15:05.462Z",
+  "updated_at": "2026-07-15T23:15:05.446Z",
   "pillars": [
     {
       "id": "autousd",
@@ -10,9 +10,9 @@
       "health": "y",
       "project_count": 4,
       "active_project_count": 4,
-      "done": 10,
-      "total": 25,
-      "pct": 40
+      "done": 14,
+      "total": 28,
+      "pct": 50
     },
     {
       "id": "otayorijapan",
@@ -60,10 +60,10 @@
       "health": "y",
       "goal": "月$5,000 USD（30〜36ヶ月・CEO承認済 2026-07-08）",
       "done_criteria": "月$5,000 USDを3ヶ月連続達成",
-      "next_action": "2026-07-15巡回で再確認：GA4修正commit(13e5ba0)後、本日までに新規デプロイが5回成功しているが（最終17:16 UTC）、本番HTML実測（python urllibで直接取得・grep）は引き続きgtag.js/測定IDが0件＝GitHub SecretsへのNEXT_PUBLIC_GA_ID登録がまだ行われていないと推定。AI側の残タスクなし、CEOの登録待ち（1日経過）",
+      "next_action": "2026-07-16巡回で再確認：本番HTML実測（python urllibで直接取得・grep）は引き続きgtag/js・G-測定IDともに0件＝GitHub SecretsへのNEXT_PUBLIC_GA_ID登録が未実施のまま。`gh secret list`はheadless実行不可（承認待ちで即エラー）のためAI側から登録状況を直接確認・実行する手段なし。AI側の残タスクなし、CEOの登録待ち（2日経過）",
       "waiting_on_ceo": [
         "❷外注パイロット・❼税理士確認の判断（説明待ち）",
-        "GitHub Actions Secretsに NEXT_PUBLIC_GA_ID を登録（gh secret set NEXT_PUBLIC_GA_ID、値は.env.localのG-KXD2KB64B8）。⏸待ち1日目。登録後は次回デプロイで自動反映されるので、それ以降にPMが本番再確認する"
+        "GitHub Actions Secretsに NEXT_PUBLIC_GA_ID を登録（gh secret set NEXT_PUBLIC_GA_ID、値は.env.localのG-KXD2KB64B8）。⏸待ち2日目。登録後は次回デプロイで自動反映されるので、それ以降にPMが本番再確認する"
       ],
       "milestones": {
         "items": [
@@ -108,7 +108,7 @@
         "total": 9,
         "pct": 33
       },
-      "last_checked": "2026-07-15"
+      "last_checked": "2026-07-16"
     },
     {
       "id": "japan-trip-planner",
@@ -149,7 +149,7 @@
         "total": 5,
         "pct": 20
       },
-      "last_checked": "2026-07-15"
+      "last_checked": "2026-07-16"
     },
     {
       "id": "dokodemo-blog-seo",
@@ -159,10 +159,11 @@
       "health": "y",
       "goal": "独自ドメインでSEO評価を蓄積しアフィリエイト審査を通す",
       "done_criteria": "docs/SEO_DOMAIN_PLAYBOOK.md の残タスク全消化＋主要アフィリ審査合格",
-      "next_action": "2026-07-15巡回で確認：PR #56（tokyo-sensoji翻訳）は昨日巡回後にマージ済み（2026-07-14 09:45 JST）、facility_backlog.jsonもpublishedに反映済みと確認（milestone達成）。なお昨日「hiroshima-miyajima等がfacility_backlog未反映」と懸念した件は誤解と判明：hiroshima-miyajima/hokkaido-nature-guide/okinawa-nature-guide/osaka-kuromon-ichibaはfacility_backlog対象外の別シリーズ（hub-and-spoke、pipeline_state.json管理）で正常。新たにosaka-kuromon-ichiba翻訳PR #77がオープン（2026-07-14 17:19時点、Vercelビルド成功・content-creator-advocate指摘は事前反映済みでクリーンな状態）、CEOレビュー・マージ待ち。tokyo-skytreeは変化なくin_review継続。AI側の残タスクなし",
+      "next_action": "2026-07-16巡回で確認：PR #77（osaka-kuromon-ichiba）2026-07-14 23:11マージ・PR #79（nara-naramachi）2026-07-15 02:12マージ、両方facility_backlog.jsonでstatus=published反映済みを確認（milestone達成）。Todai-ji（nara-todaiji）も既にpublished確認・milestone未更新だったので反映（アフィリなしで着手のCEO承認2026-07-13どおり）。新規: tokyo-sushi-making（CEO提案2026-07-15・GetYourGuide★4.9/2190件レビュー）が facility_backlog に追加され画像生成まで完了、現在in_review。hokkaido-okinawa は日本語のみの第1段階ドラフト（2段階レビュー運用どおりth/en/ko/zh-TW未着手は正常）。SEO_DOMAIN_PLAYBOOK.mdの残タスク『英語記事10本前後』は実測25本で条件クリアと確認・チェック更新済み。GA4本番実測は0件で変化なし（autousd-b-model側で管理）。AI側の残タスクなし",
       "waiting_on_ceo": [
-        "PR #77（osaka-kuromon-ichiba翻訳・チェック済みクリーン）のレビュー・マージ",
-        "tokyo-skytree記事の内容承認（facility_backlogをpublishedへ更新するか判断）"
+        "tokyo-skytree記事の内容承認（facility_backlogをpublishedへ更新するか判断）",
+        "tokyo-sushi-making記事の内容承認（新規・in_review）",
+        "英語記事本数の条件クリア済みのため、主要アフィリエイトへの審査申請着手（アカウント作成・申請はAI実行不可・CEO判断）"
       ],
       "milestones": {
         "items": [
@@ -183,27 +184,39 @@
             "label": "tokyo-sensoji PR#56 マージ・facility_backlog published反映（2026-07-14）"
           },
           {
+            "done": true,
+            "label": "osaka-kuromon-ichiba PR#77 マージ・published反映（2026-07-14）"
+          },
+          {
+            "done": true,
+            "label": "nara-naramachi PR#79 マージ・published反映（2026-07-15）"
+          },
+          {
+            "done": true,
+            "label": "Todai-ji（#7）記事化・published反映（アフィリはnot_applicableでCEO承認済み）"
+          },
+          {
+            "done": true,
+            "label": "英語記事10本前後の条件クリア（実測25本・2026-07-16確認）"
+          },
+          {
             "done": false,
             "label": "tokyo-skytree 内容承認・facility_backlog公開反映"
           },
           {
             "done": false,
-            "label": "osaka-kuromon-ichiba PR#77 レビュー・マージ"
+            "label": "tokyo-sushi-making 内容承認・公開"
           },
           {
             "done": false,
-            "label": "Todai-ji（#7）記事化・アフィリ登録"
-          },
-          {
-            "done": false,
-            "label": "主要アフィリ審査合格"
+            "label": "主要アフィリ審査申請・合格"
           }
         ],
-        "done": 4,
-        "total": 8,
-        "pct": 50
+        "done": 8,
+        "total": 11,
+        "pct": 73
       },
-      "last_checked": "2026-07-15"
+      "last_checked": "2026-07-16"
     },
     {
       "id": "dokodemo-thai-locale",
@@ -234,7 +247,7 @@
         "total": 3,
         "pct": 67
       },
-      "last_checked": "2026-07-15"
+      "last_checked": "2026-07-16"
     },
     {
       "id": "otayorijapan",
@@ -244,9 +257,9 @@
       "health": "r",
       "goal": "日本ECデータ×英語圏B2B監視の週次英語ブリーフ事業（Starter$249/Pro$499・通話ゼロ設計。CEO GO 2026-07-11）",
       "done_criteria": "ゲート①(月3:金額提示会話3件)→②(月6:有料1社)→③(月12:MRR$1,000)→月18:$5,000",
-      "next_action": "🔴2026-07-15巡回で緊急発見：本番サイト https://otayorijapan.com が503エラーで停止中。python urllibで3回リトライ確認、全て503。レスポンスボディは{\"error\":\"usage_exceeded\",\"message\":\"Usage exceeded\"}（Netlify発行、Server: Netlifyヘッダ確認済み）。/sample-report も同様に503。原因はNetlifyの利用量上限到達と推定（Netlify API/CLIトークンが.envに無くダッシュボード側の詳細確認は不可・AI側で復旧不可）。ゲート①のtier1 36社アウトリーチはCEO未送信のまま停止中のため実害はまだ出ていないが、この状態で送信するとリンク切れ体験になるため送信前に必ず復旧確認が必要",
+      "next_action": "🔴2026-07-16巡回で再確認：本番サイト https://otayorijapan.com/ と /sample-report は依然503（usage_exceeded）。python urllibで再実測、2026-07-15巡回時と同一エラーボディ・同一request_id形式で変化なし＝未復旧が継続。Netlify API/CLIトークンが.envに無くAI側から復旧手段なし。CEO対応待ち（2日経過）",
       "waiting_on_ceo": [
-        "🔴最優先：Netlifyダッシュボードで otayorijapan.com のusage_exceeded原因（帯域/ビルド分/関数呼び出し等）を確認し、プラン変更or待機で復旧すること。復旧後にPMが本番再確認する",
+        "🔴最優先：Netlifyダッシュボードで otayorijapan.com のusage_exceeded原因（帯域/ビルド分/関数呼び出し等）を確認し、プラン変更or待機で復旧すること（⏸待ち2日目）。復旧後にPMが本番再確認する",
         "アウトリーチ連絡先の質: tier1 36社は全て問い合わせフォーム経由。上位10社にLinkedIn/創業者メールを追加リサーチするか(推奨) or フォームのまま回すか",
         "Google Formの回答をスプレッドシート化（フォーム画面「スプレッドシートにリンク」）",
         "画像カットA(情報の壁)をProblemに使うか保留か。ロゴ/ファビコン未整備"
@@ -290,7 +303,7 @@
         "total": 8,
         "pct": 38
       },
-      "last_checked": "2026-07-15"
+      "last_checked": "2026-07-16"
     },
     {
       "id": "goal-guard-validation",
@@ -300,7 +313,7 @@
       "health": "y",
       "goal": "「AIに仕事を任せる人のゴール漂流」課題に需要シグナルがあるか、日本語LP＋オーガニック発信のみで検証する（CEO承認 2026-07-12・選択肢2）",
       "done_criteria": "8週間（〜2026-09-06）で判定: 先行予約5件以上=第2ゲート（有料β）へ / 未達or撤退トリガー該当=(c)資産化止まりでクローズ",
-      "next_action": "2026-07-15巡回で確認：taskpilot-sync.logで本日08:15の自動同期も正常完了（push完了）を確認、2026-07-13以降連続稼働中。N/M下限の確定待ちのため、LP骨子制作は引き続き着手保留",
+      "next_action": "2026-07-16巡回で確認：taskpilot-sync.logの最終エントリは2026-07-15 08:15分（push完了）、本日分は08:15実行前のため巡回時点では未実施（異常ではない）。2026-07-13〜15は連続稼働を確認済み。N/M下限の確定待ちのため、LP骨子制作は引き続き着手保留",
       "waiting_on_ceo": [
         "N=◯本・M=◯impの発信下限をCEOの現有発信力に基づき確定（final.md §3の前提条件）"
       ],
@@ -339,7 +352,7 @@
         "total": 7,
         "pct": 43
       },
-      "last_checked": "2026-07-15"
+      "last_checked": "2026-07-16"
     },
     {
       "id": "mercari-reconciliation",
