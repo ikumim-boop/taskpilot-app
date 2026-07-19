@@ -1,6 +1,6 @@
 {
   "generated_by": "PMリグルド",
-  "updated_at": "2026-07-18T23:15:05.288Z",
+  "updated_at": "2026-07-19T23:15:03.641Z",
   "pillars": [
     {
       "id": "autousd",
@@ -10,9 +10,9 @@
       "health": "y",
       "project_count": 4,
       "active_project_count": 4,
-      "done": 16,
-      "total": 29,
-      "pct": 55
+      "done": 17,
+      "total": 30,
+      "pct": 57
     },
     {
       "id": "otayorijapan",
@@ -60,10 +60,10 @@
       "health": "y",
       "goal": "月$5,000 USD（30〜36ヶ月・CEO承認済 2026-07-08）",
       "done_criteria": "月$5,000 USDを3ヶ月連続達成",
-      "next_action": "2026-07-17巡回で再確認：本番HTML実測（python urllibで直接取得・grep）は引き続きgtag/js・G-測定IDともに0件＝GitHub SecretsへのNEXT_PUBLIC_GA_ID登録が未実施のまま。AI側の残タスクなし、CEOの登録待ち（3日経過）",
+      "next_action": "2026-07-20巡回で再確認：本番HTML実測（dokodemojapantravel.com、python urllibで直接取得・grep）は引き続きgtag/js・G-測定IDともに0件＝GitHub SecretsへのNEXT_PUBLIC_GA_ID登録が未実施のまま。gh secret listでの確認はheadless実行のため権限承認が得られず未実施（gh secretコマンドは対話承認が必須の模様）。AI側の残タスクなし、CEOの登録待ち（6日経過）",
       "waiting_on_ceo": [
         "❷外注パイロット・❼税理士確認の判断（説明待ち）",
-        "GitHub Actions Secretsに NEXT_PUBLIC_GA_ID を登録（gh secret set NEXT_PUBLIC_GA_ID、値は.env.localのG-KXD2KB64B8）。⏸待ち3日目。登録後は次回デプロイで自動反映されるので、それ以降にPMが本番再確認する"
+        "GitHub Actions Secretsに NEXT_PUBLIC_GA_ID を登録（gh secret set NEXT_PUBLIC_GA_ID、値は.env.localのG-KXD2KB64B8）。⏸待ち6日目。登録後は次回デプロイで自動反映されるので、それ以降にPMが本番再確認する"
       ],
       "milestones": {
         "items": [
@@ -108,7 +108,7 @@
         "total": 9,
         "pct": 33
       },
-      "last_checked": "2026-07-17"
+      "last_checked": "2026-07-20"
     },
     {
       "id": "japan-trip-planner",
@@ -149,7 +149,7 @@
         "total": 5,
         "pct": 20
       },
-      "last_checked": "2026-07-17"
+      "last_checked": "2026-07-20"
     },
     {
       "id": "dokodemo-blog-seo",
@@ -159,9 +159,9 @@
       "health": "y",
       "goal": "独自ドメインでSEO評価を蓄積しアフィリエイト審査を通す",
       "done_criteria": "docs/SEO_DOMAIN_PLAYBOOK.md の残タスク全消化＋主要アフィリ審査合格",
-      "next_action": "2026-07-17巡回で確認：facility_backlog.json（57件）をpythonで直接集計、status内訳はpublished 14・in_review 1・pending 42。前回巡回後にtokyo-sushi-makingがPR#86/#87で公開（4言語翻訳・published反映）、osaka-usjが新規にドラフト→画像生成→4言語翻訳→アフィリ登録→publishedまで一気通貫で完了（PR#89〜92、いずれもAI側セッションではなく前回巡回後の別セッションで実施済み・commit timestampで確認）。PR#88でNotionプランナー由来の新規ギャップ34件がbacklogに追加され、pending件数が増加。tokyo-skytreeは引き続きin_review・CEO承認待ちで変化なし。英語記事本数条件は前回巡回で確認済みのため再実測は省略。GA4は引き続き0件（autousd-b-model側で管理）。AI側の残タスクなし（次の記事化はpendingの高popularity_score順に控えているが、実行には content-creator/kurobee経由の本格制作セッションが必要でPM日次巡回のスコープ外）",
+      "next_action": "2026-07-20巡回で確認：facility_backlog.json（57件）をpythonで直接集計、status内訳はpublished 19・in_review 1・pending 37（07-17時点はpublished 14）。07-17〜07-20の3日間でteamLab Borderless(Azabudai)・Osaka Aquarium Kaiyukan・Umeda Sky Building・Hiroshima Peace Memorial Park & Museum・Ghibli Parkの5施設がドラフト→画像生成→4言語翻訳→アフィリ登録→publishedまで一気通貫で完了（commit historyで確認、いずれもPM巡回外の別セッションで実施）。新規公開5件はいずれもth.md（タイ語）も含め5言語ファイルが揃っていることをls実測で確認済み。tokyo-skytreeは2026-07-13翻訳完了のままin_review・CEO承認待ちで変化なし（7日経過）。GA4は引き続き0件（autousd-b-model側で管理）。AI側の残タスクなし（次の記事化はpending37件中の高popularity_score順に控えているが、実行にはcontent-creator/kurobee経由の本格制作セッションが必要でPM日次巡回のスコープ外）。📝新規確認：facility_backlog外のブランチblog-draft/getting-around-japan-2026が2026-07-17にin_review化されたままだがgh pr list該当なし（PR未作成 or 未確認）。次回巡回で要再確認",
       "waiting_on_ceo": [
-        "tokyo-skytree記事の内容承認（facility_backlogをpublishedへ更新するか判断）",
+        "tokyo-skytree記事の内容承認（facility_backlogをpublishedへ更新するか判断）。⏸待ち7日目",
         "英語記事本数の条件クリア済みのため、主要アフィリエイトへの審査申請着手（アカウント作成・申請はAI実行不可・CEO判断）"
       ],
       "milestones": {
@@ -207,6 +207,10 @@
             "label": "osaka-usj 新規記事化・公開（PR#89〜92・2026-07-16）"
           },
           {
+            "done": true,
+            "label": "teamLab Borderless(Azabudai)・Osaka Aquarium Kaiyukan・Umeda Sky Building・Hiroshima Peace Memorial・Ghibli Park 公開（2026-07-17〜20）"
+          },
+          {
             "done": false,
             "label": "tokyo-skytree 内容承認・facility_backlog公開反映"
           },
@@ -215,11 +219,11 @@
             "label": "主要アフィリ審査申請・合格"
           }
         ],
-        "done": 10,
-        "total": 12,
-        "pct": 83
+        "done": 11,
+        "total": 13,
+        "pct": 85
       },
-      "last_checked": "2026-07-17"
+      "last_checked": "2026-07-20"
     },
     {
       "id": "dokodemo-thai-locale",
@@ -229,7 +233,7 @@
       "health": "g",
       "goal": "全記事にタイ語ロケールを追加（訪日タイ人+23.8%増を踏まえた多言語拡張。CEO決定2026-07-12）",
       "done_criteria": "全公開記事のth.md翻訳完了・サイトth ロケールとして正式公開",
-      "next_action": "2026-07-17巡回で確認：tokyo-sushi-making・osaka-usjともth.mdが4言語翻訳フロー内で自動生成済み（承認翻訳フローの継続稼働を確認）。現時点で追加のAI実行タスクなし",
+      "next_action": "2026-07-20巡回で確認：teamLab Borderless(Azabudai)・Osaka Aquarium Kaiyukan・Umeda Sky Building・Hiroshima Peace Memorial・Ghibli Parkの新規公開5件すべてth.mdが4言語翻訳フロー内で自動生成済み（lsで実測確認・承認翻訳フローの継続稼働を確認）。現時点で追加のAI実行タスクなし",
       "waiting_on_ceo": [],
       "milestones": {
         "items": [
@@ -250,7 +254,7 @@
         "total": 3,
         "pct": 67
       },
-      "last_checked": "2026-07-17"
+      "last_checked": "2026-07-20"
     },
     {
       "id": "otayorijapan",
@@ -260,9 +264,9 @@
       "health": "r",
       "goal": "日本ECデータ×英語圏B2B監視の週次英語ブリーフ事業（Starter$249/Pro$499・通話ゼロ設計。CEO GO 2026-07-11）",
       "done_criteria": "ゲート①(月3:金額提示会話3件)→②(月6:有料1社)→③(月12:MRR$1,000)→月18:$5,000",
-      "next_action": "🔴2026-07-17巡回で再確認：本番サイト https://otayorijapan.com/ と /sample-report は依然503（usage_exceeded）。python urllibで再実測、引き続き同一エラーボディで変化なし＝未復旧が継続。Netlify API/CLIトークンが.envに無くAI側から復旧手段なし。CEO対応待ち（3日経過）",
+      "next_action": "🔴2026-07-20巡回で再確認：本番サイト https://otayorijapan.com/ は依然503（usage_exceeded）。python urllibで再実測、変化なし＝未復旧が継続。Netlify API/CLIトークンが.envに無くAI側から復旧手段なし。CEO対応待ち（6日経過）",
       "waiting_on_ceo": [
-        "🔴最優先：Netlifyダッシュボードで otayorijapan.com のusage_exceeded原因（帯域/ビルド分/関数呼び出し等）を確認し、プラン変更or待機で復旧すること（⏸待ち3日目）。復旧後にPMが本番再確認する",
+        "🔴最優先：Netlifyダッシュボードで otayorijapan.com のusage_exceeded原因（帯域/ビルド分/関数呼び出し等）を確認し、プラン変更or待機で復旧すること（⏸待ち6日目）。復旧後にPMが本番再確認する",
         "アウトリーチ連絡先の質: tier1 36社は全て問い合わせフォーム経由。上位10社にLinkedIn/創業者メールを追加リサーチするか(推奨) or フォームのまま回すか",
         "Google Formの回答をスプレッドシート化（フォーム画面「スプレッドシートにリンク」）",
         "画像カットA(情報の壁)をProblemに使うか保留か。ロゴ/ファビコン未整備"
@@ -306,7 +310,7 @@
         "total": 8,
         "pct": 38
       },
-      "last_checked": "2026-07-17"
+      "last_checked": "2026-07-20"
     },
     {
       "id": "goal-guard-validation",
@@ -316,7 +320,7 @@
       "health": "y",
       "goal": "「AIに仕事を任せる人のゴール漂流」課題に需要シグナルがあるか、日本語LP＋オーガニック発信のみで検証する（CEO承認 2026-07-12・選択肢2）",
       "done_criteria": "8週間（〜2026-09-06）で判定: 先行予約5件以上=第2ゲート（有料β）へ / 未達or撤退トリガー該当=(c)資産化止まりでクローズ",
-      "next_action": "2026-07-17巡回で確認：taskpilot-sync.logの最終エントリは2026-07-16 08:15分（push完了）、本日分は08:15実行前のため巡回時点(08:02)では未実施（異常ではない）。2026-07-14〜16は連続稼働を確認済み。N/M下限の確定待ちのため、LP骨子制作は引き続き着手保留",
+      "next_action": "2026-07-20巡回で確認：taskpilot-sync.logは2026-07-15〜19の5日間連続でsync start→push完了→sync doneが記録されており正常稼働継続を確認。N/M下限の確定待ちのため、LP骨子制作は引き続き着手保留",
       "waiting_on_ceo": [
         "N=◯本・M=◯impの発信下限をCEOの現有発信力に基づき確定（final.md §3の前提条件）"
       ],
@@ -355,7 +359,7 @@
         "total": 7,
         "pct": 43
       },
-      "last_checked": "2026-07-17"
+      "last_checked": "2026-07-20"
     },
     {
       "id": "mercari-reconciliation",
