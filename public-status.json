@@ -1,6 +1,6 @@
 {
   "generated_by": "PMリグルド",
-  "updated_at": "2026-07-21T23:15:05.569Z",
+  "updated_at": "2026-07-22T23:15:05.552Z",
   "pillars": [
     {
       "id": "autousd",
@@ -10,9 +10,9 @@
       "health": "y",
       "project_count": 4,
       "active_project_count": 4,
-      "done": 19,
+      "done": 20,
       "total": 33,
-      "pct": 58
+      "pct": 61
     },
     {
       "id": "otayorijapan",
@@ -49,6 +49,18 @@
       "done": 0,
       "total": 0,
       "pct": 0
+    },
+    {
+      "id": "consulting",
+      "name": "AIコンサル案件",
+      "icon": "🤝",
+      "goal": "個別クライアント案件の提案〜受注〜納品",
+      "health": "y",
+      "project_count": 1,
+      "active_project_count": 1,
+      "done": 1,
+      "total": 5,
+      "pct": 20
     }
   ],
   "projects": [
@@ -60,10 +72,10 @@
       "health": "y",
       "goal": "月$5,000 USD（30〜36ヶ月・CEO承認済 2026-07-08）",
       "done_criteria": "月$5,000 USDを3ヶ月連続達成",
-      "next_action": "2026-07-22巡回で再確認：本番HTML実測（dokodemojapantravel.com、python urllibで直接取得・grep）は引き続きgtag/js・G-測定IDともに0件＝GitHub SecretsへのNEXT_PUBLIC_GA_ID登録が未実施のまま。gh secret listは今回も承認プロンプトでブロックされ確認不可（対話承認必須）。AI側の残タスクなし、CEOの登録待ち（8日経過）",
+      "next_action": "2026-07-23巡回で再確認：本番HTML実測（dokodemojapantravel.com、python urllibで直接取得・grep）は引き続きgtag/js・G-測定IDともに0件＝GitHub SecretsへのNEXT_PUBLIC_GA_ID登録が未実施のまま。AI側の残タスクなし、CEOの登録待ち（9日経過）",
       "waiting_on_ceo": [
         "❷外注パイロット・❼税理士確認の判断（説明待ち）",
-        "GitHub Actions Secretsに NEXT_PUBLIC_GA_ID を登録（gh secret set NEXT_PUBLIC_GA_ID、値は.env.localのG-KXD2KB64B8）。⏸待ち8日目。登録後は次回デプロイで自動反映されるので、それ以降にPMが本番再確認する"
+        "GitHub Actions Secretsに NEXT_PUBLIC_GA_ID を登録（gh secret set NEXT_PUBLIC_GA_ID、値は.env.localのG-KXD2KB64B8）。⏸待ち9日目。登録後は次回デプロイで自動反映されるので、それ以降にPMが本番再確認する"
       ],
       "milestones": {
         "items": [
@@ -108,7 +120,7 @@
         "total": 9,
         "pct": 33
       },
-      "last_checked": "2026-07-21"
+      "last_checked": "2026-07-23"
     },
     {
       "id": "japan-trip-planner",
@@ -159,10 +171,9 @@
       "health": "y",
       "goal": "独自ドメインでSEO評価を蓄積しアフィリエイト審査を通す",
       "done_criteria": "docs/SEO_DOMAIN_PLAYBOOK.md の残タスク全消化＋主要アフィリ審査合格",
-      "next_action": "2026-07-22巡回で確認：①新宿御苑（shinjuku-gyoen）はCEO承認済み・PR#118/#119マージ・facility_backlog.json実測でstatus:published反映を確認（コミット9b6c17b）。en/ko/zh-TW/th翻訳も完了済み（content/blog/shinjuku-gyoen/配下に5言語ファイル実在）。②新規PR#120「二条城(nijo-castle)」ja第1段階ドラフトが2026-07-21オープン（souei調査+content-creator-advocateレビュー済み、Vercel Previewチェック SUCCESS、popularity_score 10000）。アフィリ登録済み（Klook activity 20913・commit ea166c6）、画像生成もLeonardo.AI経由でPRブランチ上に反映済み（commit 81958ec、新規CI workflow`.github/workflows`試験運用で自動化）。facility_backlog.json実測でstatus:in_review。CEOのVercel Preview目視確認・承認待ち（新規・1日目）。③tokyo-skytreeはin_review変化なし・CEO承認待ち9日目、PR未起票のまま。④📝継続確認：pipeline_state.jsonでS7 kanazawa-takayama・S9 getting-around-japan-2026がstatus:in_reviewのままPR未起票（getting-around-japan-2026の最終content commitは2026-07-17で5日停滞）。中身の追加執筆・PR起票は本格制作セッション（content-creator/kurobee）の管轄でPM日次巡回のスコープ外だが、停滞日数の追跡は継続する。GA4は引き続き0件（autousd-b-model側で管理）",
+      "next_action": "2026-07-23巡回で確認：①二条城（nijo-castle）はPR#120→翻訳PR#121まで完了・facility_backlog.json実測でstatus:published反映を確認（コミット3e1b2fe）。content/blog/nijo-castle/配下にja/en/ko/zh-TW/th 5言語ファイル実在も確認。CEO承認・公開完了とみなしmilestone消化。②tokyo-skytreeはin_review変化なし・CEO承認待ち10日目、PR未起票のまま。③📝継続確認：pipeline_state.jsonでS7 kanazawa-takayama・S9 getting-around-japan-2026がstatus:in_reviewのままPR未起票（getting-around-japan-2026の最終content commitは2026-07-17で6日停滞）。中身の追加執筆・PR起票は本格制作セッション（content-creator/kurobee）の管轄でPM日次巡回のスコープ外だが、停滞日数の追跡は継続する。GA4は引き続き0件（autousd-b-model側で管理）。④新規発見：04_Consulting/配下に台帳未登録の新規案件（株式会社ボンド ヘルプデスク半自動化提案）を発見。詳細はproject-manager日報・otayorijapan外の別プロジェクトとして本日追加登録した",
       "waiting_on_ceo": [
-        "二条城PR#120のVercel Preview目視確認・承認（新規・2026-07-21オープン、Vercelチェック済みSUCCESS）",
-        "tokyo-skytree記事の内容承認（facility_backlogをpublishedへ更新するか判断）。⏸待ち9日目",
+        "tokyo-skytree記事の内容承認（facility_backlogをpublishedへ更新するか判断）。⏸待ち10日目",
         "英語記事本数の条件クリア済みのため、主要アフィリエイトへの審査申請着手（アカウント作成・申請はAI実行不可・CEO判断）"
       ],
       "milestones": {
@@ -220,8 +231,8 @@
             "label": "新宿御苑（shinjuku-gyoen）PR#118/#119 CEO承認・公開（2026-07-21〜22、5言語ファイル確認済み）"
           },
           {
-            "done": false,
-            "label": "二条城（nijo-castle）PR#120 CEO承認・公開（新規・2026-07-21オープン）"
+            "done": true,
+            "label": "二条城（nijo-castle）PR#120/#121 CEO承認・公開（2026-07-22〜23、5言語ファイル確認済み）"
           },
           {
             "done": false,
@@ -232,11 +243,11 @@
             "label": "主要アフィリ審査申請・合格"
           }
         ],
-        "done": 13,
+        "done": 14,
         "total": 16,
-        "pct": 81
+        "pct": 88
       },
-      "last_checked": "2026-07-22"
+      "last_checked": "2026-07-23"
     },
     {
       "id": "dokodemo-thai-locale",
@@ -246,7 +257,7 @@
       "health": "g",
       "goal": "全記事にタイ語ロケールを追加（訪日タイ人+23.8%増を踏まえた多言語拡張。CEO決定2026-07-12）",
       "done_criteria": "全公開記事のth.md翻訳完了・サイトth ロケールとして正式公開",
-      "next_action": "2026-07-22巡回で再確認：新宿御苑（shinjuku-gyoen）がCEO承認・公開されたため、th.md含む5言語ファイルが揃っていることをls実測で確認（自動翻訳フロー通り）。新規PR#120「二条城」はまだja以外は第1段階スタブ（thは未生成）のため、CEO承認後の第2段階翻訳（en/ko/zh-TW/th一括生成）を待つ。現時点で追加のAI実行タスクなし",
+      "next_action": "2026-07-23巡回で再確認：二条城（nijo-castle）もth.md含む5言語ファイルが揃っていることをls実測で確認済み（自動翻訳フロー通り・commit 64e6a95）。現時点で追加のAI実行タスクなし",
       "waiting_on_ceo": [],
       "milestones": {
         "items": [
@@ -267,7 +278,7 @@
         "total": 3,
         "pct": 67
       },
-      "last_checked": "2026-07-22"
+      "last_checked": "2026-07-23"
     },
     {
       "id": "otayorijapan",
@@ -277,9 +288,9 @@
       "health": "r",
       "goal": "日本ECデータ×英語圏B2B監視の週次英語ブリーフ事業（Starter$249/Pro$499・通話ゼロ設計。CEO GO 2026-07-11）",
       "done_criteria": "ゲート①(月3:金額提示会話3件)→②(月6:有料1社)→③(月12:MRR$1,000)→月18:$5,000",
-      "next_action": "🔴2026-07-22巡回で再確認：本番サイト https://otayorijapan.com/ は依然503（usage_exceeded）。python urllibで再実測、変化なし＝未復旧が継続。Netlify API/CLIトークンが.envに無くAI側から復旧手段なし。CEO対応待ち（8日経過）",
+      "next_action": "🔴2026-07-23巡回で再確認：本番サイト https://otayorijapan.com/ は依然503（usage_exceeded）。python urllibで再実測、変化なし＝未復旧が継続。Netlify API/CLIトークンが.envに無くAI側から復旧手段なし。CEO対応待ち（9日経過）",
       "waiting_on_ceo": [
-        "🔴最優先：Netlifyダッシュボードで otayorijapan.com のusage_exceeded原因（帯域/ビルド分/関数呼び出し等）を確認し、プラン変更or待機で復旧すること（⏸待ち8日目）。復旧後にPMが本番再確認する",
+        "🔴最優先：Netlifyダッシュボードで otayorijapan.com のusage_exceeded原因（帯域/ビルド分/関数呼び出し等）を確認し、プラン変更or待機で復旧すること（⏸待ち9日目）。復旧後にPMが本番再確認する",
         "アウトリーチ連絡先の質: tier1 36社は全て問い合わせフォーム経由。上位10社にLinkedIn/創業者メールを追加リサーチするか(推奨) or フォームのまま回すか",
         "Google Formの回答をスプレッドシート化（フォーム画面「スプレッドシートにリンク」）",
         "画像カットA(情報の壁)をProblemに使うか保留か。ロゴ/ファビコン未整備"
@@ -323,7 +334,7 @@
         "total": 8,
         "pct": 38
       },
-      "last_checked": "2026-07-22"
+      "last_checked": "2026-07-23"
     },
     {
       "id": "goal-guard-validation",
@@ -333,7 +344,7 @@
       "health": "y",
       "goal": "「AIに仕事を任せる人のゴール漂流」課題に需要シグナルがあるか、日本語LP＋オーガニック発信のみで検証する（CEO承認 2026-07-12・選択肢2）",
       "done_criteria": "8週間（〜2026-09-06）で判定: 先行予約5件以上=第2ゲート（有料β）へ / 未達or撤退トリガー該当=(c)資産化止まりでクローズ",
-      "next_action": "2026-07-22巡回で再確認：taskpilot-sync.logは2026-07-21分もsync start→push完了→sync doneが記録されており正常稼働継続を確認（7日連続）。N/M下限の確定待ちのため、LP骨子制作は引き続き着手保留",
+      "next_action": "2026-07-23巡回で再確認：taskpilot-sync.logは2026-07-22分もsync start→push完了→sync doneが記録されており正常稼働継続を確認（2026-07-13〜07-22まで欠落なし）。N/M下限の確定待ちのため、LP骨子制作は引き続き着手保留",
       "waiting_on_ceo": [
         "N=◯本・M=◯impの発信下限をCEOの現有発信力に基づき確定（final.md §3の前提条件）"
       ],
@@ -372,7 +383,7 @@
         "total": 7,
         "pct": 43
       },
-      "last_checked": "2026-07-22"
+      "last_checked": "2026-07-23"
     },
     {
       "id": "mercari-reconciliation",
@@ -406,6 +417,48 @@
         "pct": 33
       },
       "last_checked": "2026-07-08"
+    },
+    {
+      "id": "bond-helpdesk-proposal",
+      "pillar": "consulting",
+      "name": "株式会社ボンド ヘルプデスク半自動化 提案",
+      "status": "active",
+      "health": "y",
+      "goal": "不明（推測: ヘルプデスク返信業務の半自動化提案・受注額¥100,000税込クリーン版）",
+      "done_criteria": "不明（契約締結or提案見送りの判断が未確認のため設定できず。CEOに done_criteria を確認要）",
+      "next_action": "2026-07-23巡回で新規発見・台帳登録。①提案書一式(詳細版/1枚版のmd+docx)は未マージのリモートブランチ上（コミット8f83b71、`git branch --all --contains 8f83b71`で特定可、WIP:文言調整中と明記）のみに存在しmainに無い。②さらにローカル 04_Consulting/Bond/提案書_株式会社ボンド_概要1枚.pages（753KB, 2026-07-23 02:33更新）がgit未追跡でどこにもバックアップされていない＝端末故障でロストするリスクあり。③04_Consulting/Bond と 04_Consulting/bond はmacOSの大小文字非区別ファイルシステム上で同一物理フォルダ（inode一致を実機確認済み）だが、git上は別パス扱いで表示が食い違っている。AI側は提案内容(文言・金額)の編集権限がない領域のため、現状確認・リスク提起のみに留めた",
+      "waiting_on_ceo": [
+        "提案書の送付状況・受注可否は不明。進捗をCEOに確認",
+        "未commitの.pagesファイル（データロスリスクあり）をcommitするか破棄するか判断。commitする場合はブランチのmd/docxとの重複整理も必要"
+      ],
+      "milestones": {
+        "items": [
+          {
+            "done": true,
+            "label": "提案書ドラフト作成（詳細版・1枚版、md+docx、ブランチ上）"
+          },
+          {
+            "done": false,
+            "label": "main未マージの提案書一式の扱い決定"
+          },
+          {
+            "done": false,
+            "label": "未追跡.pagesファイルのデータロスリスク解消"
+          },
+          {
+            "done": false,
+            "label": "提案書送付"
+          },
+          {
+            "done": false,
+            "label": "受注/見送りの判断"
+          }
+        ],
+        "done": 1,
+        "total": 5,
+        "pct": 20
+      },
+      "last_checked": "2026-07-23"
     }
   ]
 }
