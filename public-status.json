@@ -1,6 +1,6 @@
 {
   "generated_by": "PMリグルド",
-  "updated_at": "2026-07-25T23:15:06.263Z",
+  "updated_at": "2026-07-26T23:15:05.005Z",
   "pillars": [
     {
       "id": "autousd",
@@ -10,9 +10,9 @@
       "health": "y",
       "project_count": 4,
       "active_project_count": 4,
-      "done": 20,
-      "total": 34,
-      "pct": 59
+      "done": 21,
+      "total": 35,
+      "pct": 60
     },
     {
       "id": "otayorijapan",
@@ -72,10 +72,10 @@
       "health": "y",
       "goal": "月$5,000 USD（30〜36ヶ月・CEO承認済 2026-07-08）",
       "done_criteria": "月$5,000 USDを3ヶ月連続達成",
-      "next_action": "2026-07-26巡回で再確認：本番ページ取得(WebFetch)でも引き続きgtag/js・G-測定IDともに検出0件＝GitHub SecretsへのNEXT_PUBLIC_GA_ID登録が未実施のまま。AI側の残タスクなし、CEOの登録待ち（12日経過）",
+      "next_action": "2026-07-27巡回で再確認：本番ページ取得(WebFetch)でも引き続きgtag/js・G-測定IDともに検出0件＝GitHub SecretsへのNEXT_PUBLIC_GA_ID登録が未実施のまま。AI側の残タスクなし、CEOの登録待ち（13日経過）",
       "waiting_on_ceo": [
         "❷外注パイロット・❼税理士確認の判断（説明待ち）",
-        "GitHub Actions Secretsに NEXT_PUBLIC_GA_ID を登録（gh secret set NEXT_PUBLIC_GA_ID、値は.env.localのG-KXD2KB64B8）。⏸待ち12日目。登録後は次回デプロイで自動反映されるので、それ以降にPMが本番再確認する"
+        "GitHub Actions Secretsに NEXT_PUBLIC_GA_ID を登録（gh secret set NEXT_PUBLIC_GA_ID、値は.env.localのG-KXD2KB64B8）。⏸待ち13日目。登録後は次回デプロイで自動反映されるので、それ以降にPMが本番再確認する"
       ],
       "milestones": {
         "items": [
@@ -120,7 +120,7 @@
         "total": 9,
         "pct": 33
       },
-      "last_checked": "2026-07-26"
+      "last_checked": "2026-07-27"
     },
     {
       "id": "japan-trip-planner",
@@ -161,7 +161,7 @@
         "total": 5,
         "pct": 20
       },
-      "last_checked": "2026-07-25"
+      "last_checked": "2026-07-27"
     },
     {
       "id": "dokodemo-blog-seo",
@@ -171,10 +171,10 @@
       "health": "y",
       "goal": "独自ドメインでSEO評価を蓄積しアフィリエイト審査を通す",
       "done_criteria": "docs/SEO_DOMAIN_PLAYBOOK.md の残タスク全消化＋主要アフィリ審査合格",
-      "next_action": "2026-07-26巡回で確認：①PR#122「京都・祇園(gion)」は状態変化なし・OPENのまま（gh pr view: updatedAt 2026-07-24T11:28以降、更新なし）。facility_backlog.json上のgionエントリはPR未マージのためstatus:pendingのまま（アフィリ登録gion-walking-tourのみ07-23に先行反映済み）。Vercel Preview確認とCEO承認待ち（4日経過）。②tokyo-skytreeはin_review変化なし・CEO承認待ち13日目、PR未起票のまま。③📝継続確認：pipeline_state.json（更新日2026-07-17で停止中の別シリーズ、S1-S9ハブ企画）でkanazawa-takayama・getting-around-japan-2026含む6本がstatus:in_review停滞継続（9日目）。中身の追加執筆・PR起票は本格制作セッション（content-creator/kurobee）の管轄でPM日次巡回のスコープ外だが、停滞日数の追跡は継続する。GA4は引き続き0件（autousd-b-model側で管理）",
+      "next_action": "2026-07-27巡回で確認：①祇園(gion)は昨夜のうちに完了。PR#122(ja初稿)が07-26 13:36 UTCマージ→PR#123(en/ko/th/zh-TW翻訳)が07-26 14:40 UTCマージ→facility_backlog.jsonがpublishedへ更新済み(4e81fa9)。5言語ファイル実在確認済み（th.mdも本文翻訳あり、プレースホルダーでない）。②新規PR#124「飛鳥・藤原の宮都」世界遺産登録速報記事(slug: nara-asuka-fujiwara)が07-26 14:31 UTCにオープン。ja初稿＋en/ko/zh-TW英語プレースホルダー、content-creator-advocateレビュー済み。CEO承認待ち（1日経過）。facility_backlog外のニュース起点記事のため台帳に新規追加。③tokyo-skytreeはin_review変化なし・CEO承認待ち14日目。④📝継続確認：pipeline_state.json（更新日2026-07-17で停止中の別シリーズ、S1-S9ハブ企画）でkanazawa-takayama・getting-around-japan-2026含む6本がstatus:in_review停滞継続（10日目）。PM日次巡回のスコープ外だが停滞日数の追跡は継続する。GA4は引き続き0件（autousd-b-model側で管理）",
       "waiting_on_ceo": [
-        "祇園(gion) PR#122のVercel Preview目視確認・承認（2026-07-22オープン、4日経過）",
-        "tokyo-skytree記事の内容承認（facility_backlogをpublishedへ更新するか判断）。⏸待ち13日目",
+        "新規PR#124「飛鳥・藤原の宮都」記事のVercel Preview目視確認・承認（2026-07-26オープン、1日経過）",
+        "tokyo-skytree記事の内容承認（facility_backlogをpublishedへ更新するか判断）。⏸待ち14日目",
         "英語記事本数の条件クリア済みのため、主要アフィリエイトへの審査申請着手（アカウント作成・申請はAI実行不可・CEO判断）"
       ],
       "milestones": {
@@ -236,8 +236,12 @@
             "label": "二条城（nijo-castle）PR#120/#121 CEO承認・公開（2026-07-22〜23、5言語ファイル確認済み）"
           },
           {
+            "done": true,
+            "label": "祇園（gion）PR#122/#123 CEO承認・公開・facility_backlog published反映（2026-07-26）"
+          },
+          {
             "done": false,
-            "label": "祇園（gion）PR#122 CEO承認・公開（2026-07-22オープン）"
+            "label": "飛鳥・藤原の宮都（nara-asuka-fujiwara）PR#124 CEO承認・公開（2026-07-26オープン）"
           },
           {
             "done": false,
@@ -248,11 +252,11 @@
             "label": "主要アフィリ審査申請・合格"
           }
         ],
-        "done": 14,
-        "total": 17,
-        "pct": 82
+        "done": 15,
+        "total": 18,
+        "pct": 83
       },
-      "last_checked": "2026-07-26"
+      "last_checked": "2026-07-27"
     },
     {
       "id": "dokodemo-thai-locale",
@@ -262,7 +266,7 @@
       "health": "g",
       "goal": "全記事にタイ語ロケールを追加（訪日タイ人+23.8%増を踏まえた多言語拡張。CEO決定2026-07-12）",
       "done_criteria": "全公開記事のth.md翻訳完了・サイトth ロケールとして正式公開",
-      "next_action": "2026-07-26巡回で再確認：新規公開記事なし（祇園PR#122は未マージ・第1段階でth.mdはプレースホルダーのまま）。既存公開記事の5言語ファイルに変化なし。現時点で追加のAI実行タスクなし",
+      "next_action": "2026-07-27巡回で再確認：祇園(gion)がCEO承認・公開済み。th.mdは本文翻訳済み（プレースホルダーでないことを確認、122行）＝自動翻訳フローが正常機能。新規PR#124(nara-asuka-fujiwara)は第1段階のためth.md未生成（CEO承認後の第2段階で追加見込み、想定通り）。現時点で追加のAI実行タスクなし",
       "waiting_on_ceo": [],
       "milestones": {
         "items": [
@@ -272,7 +276,7 @@
           },
           {
             "done": true,
-            "label": "新規記事は自動翻訳フローでth.md込み生成される体制に移行"
+            "label": "新規記事は自動翻訳フローでth.md込み生成される体制に移行（gionで再確認・2026-07-26）"
           },
           {
             "done": false,
@@ -283,7 +287,7 @@
         "total": 3,
         "pct": 67
       },
-      "last_checked": "2026-07-26"
+      "last_checked": "2026-07-27"
     },
     {
       "id": "otayorijapan",
@@ -293,9 +297,9 @@
       "health": "r",
       "goal": "日本ECデータ×英語圏B2B監視の週次英語ブリーフ事業（Starter$249/Pro$499・通話ゼロ設計。CEO GO 2026-07-11）",
       "done_criteria": "ゲート①(月3:金額提示会話3件)→②(月6:有料1社)→③(月12:MRR$1,000)→月18:$5,000",
-      "next_action": "🔴2026-07-26巡回で再確認：本番サイト https://otayorijapan.com/ は依然503（usage_exceeded）。WebFetchで再実測、変化なし＝未復旧が継続。Netlify API/CLIトークンが.envに無くAI側から復旧手段なし。CEO対応待ち（12日経過）",
+      "next_action": "🔴2026-07-27巡回で再確認：本番サイト https://otayorijapan.com/ は依然503。WebFetchで再実測、変化なし＝未復旧が継続。Netlify API/CLIトークンが.envに無くAI側から復旧手段なし。CEO対応待ち（13日経過）",
       "waiting_on_ceo": [
-        "🔴最優先：Netlifyダッシュボードで otayorijapan.com のusage_exceeded原因（帯域/ビルド分/関数呼び出し等）を確認し、プラン変更or待機で復旧すること（⏸待ち12日目）。復旧後にPMが本番再確認する",
+        "🔴最優先：Netlifyダッシュボードで otayorijapan.com のusage_exceeded原因（帯域/ビルド分/関数呼び出し等）を確認し、プラン変更or待機で復旧すること（⏸待ち13日目）。復旧後にPMが本番再確認する",
         "アウトリーチ連絡先の質: tier1 36社は全て問い合わせフォーム経由。上位10社にLinkedIn/創業者メールを追加リサーチするか(推奨) or フォームのまま回すか",
         "Google Formの回答をスプレッドシート化（フォーム画面「スプレッドシートにリンク」）",
         "画像カットA(情報の壁)をProblemに使うか保留か。ロゴ/ファビコン未整備"
@@ -339,7 +343,7 @@
         "total": 8,
         "pct": 38
       },
-      "last_checked": "2026-07-26"
+      "last_checked": "2026-07-27"
     },
     {
       "id": "goal-guard-validation",
@@ -349,7 +353,7 @@
       "health": "y",
       "goal": "「AIに仕事を任せる人のゴール漂流」課題に需要シグナルがあるか、日本語LP＋オーガニック発信のみで検証する（CEO承認 2026-07-12・選択肢2）",
       "done_criteria": "8週間（〜2026-09-06）で判定: 先行予約5件以上=第2ゲート（有料β）へ / 未達or撤退トリガー該当=(c)資産化止まりでクローズ",
-      "next_action": "2026-07-26巡回で再確認：taskpilot-sync.logは2026-07-25分もsync start→push完了→sync doneが記録されており正常稼働継続を確認（欠落なし）。N/M下限の確定待ちのため、LP骨子制作は引き続き着手保留",
+      "next_action": "2026-07-27巡回で再確認：taskpilot-sync.logは2026-07-26分もsync start→push完了→sync doneが記録されており正常稼働継続を確認（欠落なし）。N/M下限の確定待ちのため、LP骨子制作は引き続き着手保留",
       "waiting_on_ceo": [
         "N=◯本・M=◯impの発信下限をCEOの現有発信力に基づき確定（final.md §3の前提条件）"
       ],
@@ -388,7 +392,7 @@
         "total": 7,
         "pct": 43
       },
-      "last_checked": "2026-07-26"
+      "last_checked": "2026-07-27"
     },
     {
       "id": "mercari-reconciliation",
@@ -431,10 +435,10 @@
       "health": "r",
       "goal": "問合せ対応（ヘルプデスク）返信業務の半自動化を受託。価格¥100,000税込一式固定（免税事業者・値上げしない方針）。客の必須要件はSlack完結（承認・編集・送信）。HANDOFF.md（ブランチ上・2026-07-23付）で確定",
       "done_criteria": "不明（推測: 契約成立→Slack完結POC→段階リリース→納品完了で判断。CEOに正式なdone_criteriaを確認要）",
-      "next_action": "2026-07-26巡回で再確認：04_Consulting/Bond/配下（gitignoreされていないローカルフォルダ、全てgit未追跡）は前回巡回（07-25）以降ファイルの更新なし（全ファイルmtimeが07-24以前で変化なし）。見積書・提案書2バージョン・請求書・送付メール下書き・🔴11.7GB初回面談録画（唯一のコピー・バックアップなし）とも状態維持。現在の商談ステータス（送付済み/受注済み等）は引き続き未確証。金額・受注可否等の中身編集・ファイルのcommit判断はPM権限外のため、現状確認とリスク提起のみ継続",
+      "next_action": "2026-07-27巡回で再確認：04_Consulting/Bond/配下（gitignoreされていないローカルフォルダ、全てgit未追跡）は前回巡回（07-26）以降ファイルの更新なし。見積書・提案書2バージョン・請求書・送付メール下書き・🔴11.7GB初回面談録画（唯一のコピー・バックアップなし）とも状態維持。現在の商談ステータス（送付済み/受注済み等）は引き続き未確証。金額・受注可否等の中身編集・ファイルのcommit判断はPM権限外のため、現状確認とリスク提起のみ継続",
       "waiting_on_ceo": [
         "見積書(2026-07-24付)・提案書2バージョン・請求書(2026-07-22付)・初回面談録画が存在する。現在の商談ステータス（送付済み/受注済み等）をCEOに確認したい",
-        "🔴11.7GBの初回面談録画が唯一のコピーでバックアップなし。git commit不可（サイズ超過・PII）のため、外部バックアップ（Drive等）の要否を判断してほしい（録画日2026-07-22から4日経過）",
+        "🔴11.7GBの初回面談録画が唯一のコピーでバックアップなし。git commit不可（サイズ超過・PII）のため、外部バックアップ（Drive等）の要否を判断してほしい（録画日2026-07-22から5日経過）",
         "未commitの.pages/PDF一式（提案書2種・見積書・請求書）のバックアップ方法。commitする場合はブランチ上のmd/docxとの重複整理も必要",
         "main未マージの提案書ブランチ（Bond案件の作業ブランチ、`git branch --all --contains 8f83b71` で特定可）の扱い。HANDOFF.mdの次の一手はSlack完結POC（要人手セットアップ：Slack App・GASデプロイ）"
       ],
@@ -477,7 +481,7 @@
         "total": 8,
         "pct": 38
       },
-      "last_checked": "2026-07-26"
+      "last_checked": "2026-07-27"
     }
   ]
 }
