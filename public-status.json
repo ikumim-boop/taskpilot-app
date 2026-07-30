@@ -1,18 +1,18 @@
 {
   "generated_by": "PMリグルド",
-  "updated_at": "2026-07-29T23:15:05.280Z",
+  "updated_at": "2026-07-30T23:15:06.179Z",
   "pillars": [
     {
       "id": "autousd",
       "name": "AutoUSD",
       "icon": "💵",
       "goal": "月$5,000 USD事業計画（30〜36ヶ月・CEO承認済 2026-07-08）",
-      "health": "r",
+      "health": "y",
       "project_count": 4,
       "active_project_count": 4,
-      "done": 24,
+      "done": 25,
       "total": 38,
-      "pct": 63
+      "pct": 66
     },
     {
       "id": "otayorijapan",
@@ -58,9 +58,9 @@
       "health": "r",
       "project_count": 1,
       "active_project_count": 1,
-      "done": 5,
-      "total": 11,
-      "pct": 45
+      "done": 6,
+      "total": 12,
+      "pct": 50
     }
   ],
   "projects": [
@@ -72,10 +72,10 @@
       "health": "y",
       "goal": "月$5,000 USD（30〜36ヶ月・CEO承認済 2026-07-08）",
       "done_criteria": "月$5,000 USDを3ヶ月連続達成",
-      "next_action": "2026-07-30巡回で再確認：本番ページ(dokodemojapantravel.com)取得(WebFetch)でも引き続きgtag.js・G-測定IDともに検出0件＝GitHub SecretsへのNEXT_PUBLIC_GA_ID登録が未実施のまま。AI側の残タスクなし、CEOの登録待ち（16日経過）",
+      "next_action": "2026-07-31巡回で再確認：本番ページ(dokodemojapantravel.com)取得(WebFetch)でも引き続きgtag.js・G-測定IDともに検出0件＝GitHub SecretsへのNEXT_PUBLIC_GA_ID登録が未実施のまま。AI側の残タスクなし、CEOの登録待ち（17日経過）",
       "waiting_on_ceo": [
         "❷外注パイロット・❼税理士確認の判断（説明待ち）",
-        "GitHub Actions Secretsに NEXT_PUBLIC_GA_ID を登録（gh secret set NEXT_PUBLIC_GA_ID、値は.env.localのG-KXD2KB64B8）。⏸待ち16日目。登録後は次回デプロイで自動反映されるので、それ以降にPMが本番再確認する"
+        "GitHub Actions Secretsに NEXT_PUBLIC_GA_ID を登録（gh secret set NEXT_PUBLIC_GA_ID、値は.env.localのG-KXD2KB64B8）。⏸待ち17日目。登録後は次回デプロイで自動反映されるので、それ以降にPMが本番再確認する"
       ],
       "milestones": {
         "items": [
@@ -130,7 +130,7 @@
       "health": "y",
       "goal": "Etsy出品（縦・実写真・Canvaテンプレ納品）",
       "done_criteria": "Etsyに出品完了し初売上",
-      "next_action": "2026-07-30巡回で再確認：変化なし。p29-33の画像生成はv3版まで完了済み。AI側の残タスクなし",
+      "next_action": "2026-07-31巡回で再確認：変化なし。p29-33の画像生成はv3版まで完了済み。AI側の残タスクなし",
       "waiting_on_ceo": [
         "Canvaアプリでのページ結合＋ナビリンク貼り（AI不可領域）"
       ],
@@ -168,13 +168,12 @@
       "pillar": "autousd",
       "name": "DokodemoJapan ブログ・SEO・アフィリ審査",
       "status": "active",
-      "health": "r",
+      "health": "y",
       "goal": "独自ドメインでSEO評価を蓄積しアフィリエイト審査を通す",
       "done_criteria": "docs/SEO_DOMAIN_PLAYBOOK.md の残タスク全消化＋主要アフィリ審査合格",
-      "next_action": "2026-07-30巡回で前進：①PR#127（Shibaアイコン404修正）は2026-07-29マージ済み確認（gh pr view）。②PR#126（築地場外市場）も2026-07-29マージ済み確認・CEO差し戻し後のrewrite(c81d8fa、注意書き羅列→desire中心へ全面書き直し・アレルギーセクション削除)がmainに反映済みであることをja.md実読で確認。③新規PR#128（4言語翻訳en/ko/zh-TW/th）が2026-07-29オープン。content-creator-advocateに翻訳のファクト突合せを委任した結果、🔴th.mdに ja.md に存在しないアレルゲン・交差汚染の具体的主張（卵焼き/ホタテ/天ぷらの調理器具共用等）が3箇所独立加筆されていることが判明（feedback-translation-independent-fact-fabrication.mdの既知パターン再発）。en/ko/zh-TWは加筆なし・数値整合確認済み。④tokyo-skytreeはfacility_backlog.json実測で引き続きstatus:in_review（承認待ち17日目）",
+      "next_action": "2026-07-31巡回で前進を確認：PR#128（築地4言語翻訳）は2026-07-30 04:05マージ済み（gh pr list実測）。さらに同日13:04、commit 683c603でja.mdとの1文突合せファクトチェック修正（約153件）が実行され、🔴th.mdのアレルゲン捏造3箇所（炭火ホタテのクロスコンタミ主張含む）は全削除・en.mdの引用文改変とzh-TWの架空エピソードも修正済み（git show実測・検算全項目通過とコミットメッセージに記載）。CEO承認待ちだったth.md捏造の論点は解消。tokyo-skytreeはfacility_backlog.json実測で引き続きstatus:in_review（承認待ち18日目）",
       "waiting_on_ceo": [
-        "🔴PR#128（4言語翻訳）th.mdのアレルゲン捏造3箇所を削除してからマージすること（健康被害リスクのある未検証記述、公開前必須修正）。修正後にen/ko/zh-TWは翻訳品質良好なのでその他は承認可",
-        "tokyo-skytree記事の内容承認（facility_backlogをpublishedへ更新するか判断）。⏸待ち17日目",
+        "tokyo-skytree記事の内容承認（facility_backlogをpublishedへ更新するか判断）。⏸待ち18日目",
         "英語記事本数の条件クリア済みのため、主要アフィリエイトへの審査申請着手（アカウント作成・申請はAI実行不可・CEO判断）"
       ],
       "milestones": {
@@ -252,8 +251,8 @@
             "label": "築地場外市場（tsukiji-outer-market）PR#126 CEO差し戻し→rewrite→承認・公開（2026-07-29、commit f074286）"
           },
           {
-            "done": false,
-            "label": "🔴PR#128（築地4言語翻訳）th.mdのアレルゲン捏造3箇所を削除してマージ"
+            "done": true,
+            "label": "PR#128（築地4言語翻訳）マージ＋th.mdのアレルゲン捏造3箇所を削除（commit 683c603・2026-07-30）"
           },
           {
             "done": false,
@@ -264,11 +263,11 @@
             "label": "主要アフィリ審査申請・合格"
           }
         ],
-        "done": 18,
+        "done": 19,
         "total": 21,
-        "pct": 86
+        "pct": 90
       },
-      "last_checked": "2026-07-30"
+      "last_checked": "2026-07-31"
     },
     {
       "id": "dokodemo-thai-locale",
@@ -278,7 +277,7 @@
       "health": "g",
       "goal": "全記事にタイ語ロケールを追加（訪日タイ人+23.8%増を踏まえた多言語拡張。CEO決定2026-07-12）",
       "done_criteria": "全公開記事のth.md翻訳完了・サイトth ロケールとして正式公開",
-      "next_action": "2026-07-30巡回で前進：PR#126マージ後の第2段階PR#128でth.md含む4言語が生成され自動翻訳フロー継続を再確認。ただしth.mdにアレルゲン捏造3箇所を検出（dokodemo-blog-seo側でCEO対応待ちとして計上、詳細はそちら参照）。マージ後にth.md単体の削除修正が必要",
+      "next_action": "2026-07-31巡回で前進を確認：PR#128のth.md含む4言語はマージ済み（2026-07-30）、かつ同日中にth.mdのアレルゲン捏造3箇所も修正済み（commit 683c603、詳細はdokodemo-blog-seo参照）。自動翻訳フローがth.mdまで含めて正常運用できていることを実データで確認",
       "waiting_on_ceo": [],
       "milestones": {
         "items": [
@@ -288,7 +287,7 @@
           },
           {
             "done": true,
-            "label": "新規記事は自動翻訳フローでth.md込み生成される体制に移行（tsukiji-outer-market PR#128で再確認・2026-07-29）"
+            "label": "新規記事は自動翻訳フローでth.md込み生成される体制に移行（tsukiji-outer-market PR#128で再確認・2026-07-30）"
           },
           {
             "done": false,
@@ -299,7 +298,7 @@
         "total": 3,
         "pct": 67
       },
-      "last_checked": "2026-07-30"
+      "last_checked": "2026-07-31"
     },
     {
       "id": "otayorijapan",
@@ -309,9 +308,9 @@
       "health": "r",
       "goal": "日本ECデータ×英語圏B2B監視の週次英語ブリーフ事業（Starter$249/Pro$499・通話ゼロ設計。CEO GO 2026-07-11）",
       "done_criteria": "ゲート①(月3:金額提示会話3件)→②(月6:有料1社)→③(月12:MRR$1,000)→月18:$5,000",
-      "next_action": "🔴2026-07-30巡回で再確認：本番サイト https://otayorijapan.com/ は依然503（curl実測）。変化なし＝未復旧が継続。Netlify API/CLIトークンが.envに無くAI側から復旧手段なし。CEO対応待ち（16日経過）",
+      "next_action": "🔴2026-07-31巡回で再確認：本番サイト https://otayorijapan.com/ は依然503（WebFetch実測）。変化なし＝未復旧が継続。Netlify API/CLIトークンが.envに無くAI側から復旧手段なし。CEO対応待ち（17日経過）",
       "waiting_on_ceo": [
-        "🔴最優先：Netlifyダッシュボードで otayorijapan.com のusage_exceeded原因（帯域/ビルド分/関数呼び出し等）を確認し、プラン変更or待機で復旧すること（⏸待ち16日目）。復旧後にPMが本番再確認する",
+        "🔴最優先：Netlifyダッシュボードで otayorijapan.com のusage_exceeded原因（帯域/ビルド分/関数呼び出し等）を確認し、プラン変更or待機で復旧すること（⏸待ち17日目）。復旧後にPMが本番再確認する",
         "アウトリーチ連絡先の質: tier1 36社は全て問い合わせフォーム経由。上位10社にLinkedIn/創業者メールを追加リサーチするか(推奨) or フォームのまま回すか",
         "Google Formの回答をスプレッドシート化（フォーム画面「スプレッドシートにリンク」）",
         "画像カットA(情報の壁)をProblemに使うか保留か。ロゴ/ファビコン未整備"
@@ -355,7 +354,7 @@
         "total": 8,
         "pct": 38
       },
-      "last_checked": "2026-07-30"
+      "last_checked": "2026-07-31"
     },
     {
       "id": "goal-guard-validation",
@@ -365,7 +364,7 @@
       "health": "y",
       "goal": "「AIに仕事を任せる人のゴール漂流」課題に需要シグナルがあるか、日本語LP＋オーガニック発信のみで検証する（CEO承認 2026-07-12・選択肢2）",
       "done_criteria": "8週間（〜2026-09-06）で判定: 先行予約5件以上=第2ゲート（有料β）へ / 未達or撤退トリガー該当=(c)資産化止まりでクローズ",
-      "next_action": "2026-07-30巡回で再確認：taskpilot-sync.logは2026-07-29分もsync start→push完了→sync doneが記録されており正常稼働継続を確認（欠落なし）。N/M下限の確定待ちのため、LP骨子制作は引き続き着手保留",
+      "next_action": "2026-07-31巡回で再確認：taskpilot-sync.logは2026-07-30分もsync start→push完了→sync doneが記録されており正常稼働継続を確認（欠落なし）。N/M下限の確定待ちのため、LP骨子制作は引き続き着手保留",
       "waiting_on_ceo": [
         "N=◯本・M=◯impの発信下限をCEOの現有発信力に基づき確定（final.md §3の前提条件）"
       ],
@@ -404,7 +403,7 @@
         "total": 7,
         "pct": 43
       },
-      "last_checked": "2026-07-30"
+      "last_checked": "2026-07-31"
     },
     {
       "id": "mercari-reconciliation",
@@ -447,11 +446,10 @@
       "health": "r",
       "goal": "問合せ対応（ヘルプデスク）返信業務の半自動化を受託。価格¥100,000税込一式固定（免税事業者・値上げしない方針）。客の必須要件はSlack完結（承認・編集・送信）。HANDOFF.md（ブランチ上・2026-07-23付）で確定",
       "done_criteria": "不明（推測: 契約成立→Slack完結POC→段階リリース→納品完了で判断。CEOに正式なdone_criteriaを確認要）",
-      "next_action": "2026-07-30巡回で前進を確認（memory: project-bond-helpdesk-automation.md 2026-07-29 12:47更新分を反映、台帳未反映だった分）：CEO個人Googleサンドボックスでの実機検証でM1(Phase0の頭脳=照合→根拠つき下書き/無マッチ→6部署採配)実証済み✅、M2(下書き宛先が自社ACK宛に化けるC-1バグ)もA/Bで修正確認済み✅（orig.createDraftReply方式に修正）。残りはM3(Slack④⑤・CEOの無料Slackワークスペース必要)→本番移行(先方の課金設定・Slackアプリ管理者承認・実メールボックス権限)で、いずれも『先方/CEOから権限をもらう』待ちでAI側の実行余地なし。04_Consulting/Bond/配下（gitignore対象外・全て未追跡）のファイルmtimeは引き続き07-24以降更新なし、🔴11.7GB初回面談録画も状態維持",
+      "next_action": "2026-07-31巡回で再確認：memory project-bond-helpdesk-automation.md（2026-07-30 03:49更新）はM3-a(Slack④配線・testSlackPostのカード表示をCEOのSlackで画面確認済み✅)まで前進していたが台帳未反映だったため反映。04_Consulting/bond/配下のファイルmtimeはls実測で引き続き07-24以降更新なし（🔴11.7GB初回面談録画も07-22のまま状態維持・9日経過）。残M3-b(実AI下書きカード)→M3-c(Slack Interactivityでボタン実送信)→本番移行はいずれも『先方/CEOから権限をもらう』待ちでAI側の実行余地なし",
       "waiting_on_ceo": [
-        "M3(Slack④⑤)着手のため、検証用の無料Slackワークスペースを用意してほしい（AI側で他の準備は完了）",
         "見積書(2026-07-24付)・提案書2バージョン・請求書(2026-07-22付)・初回面談録画が存在する。現在の商談ステータス（送付済み/受注済み等）をCEOに確認したい",
-        "🔴11.7GBの初回面談録画が唯一のコピーでバックアップなし。git commit不可（サイズ超過・PII）のため、外部バックアップ（Drive等）の要否を判断してほしい（録画日2026-07-22から8日経過）",
+        "🔴11.7GBの初回面談録画が唯一のコピーでバックアップなし。git commit不可（サイズ超過・PII）のため、外部バックアップ（Drive等）の要否を判断してほしい（録画日2026-07-22から9日経過）",
         "未commitの.pages/PDF一式（提案書2種・見積書・請求書）のバックアップ方法。commitする場合はブランチ上のmd/docxとの重複整理も必要",
         "main未マージの提案書ブランチ（Bond案件の作業ブランチ、`git branch --all --contains 8f83b71` で特定可）の扱い"
       ],
@@ -478,6 +476,10 @@
             "label": "M2: C-1宛先バグ（下書きが自社ACK宛に化ける）修正・A/B実機検証（2026-07-29）"
           },
           {
+            "done": true,
+            "label": "M3-a: Slack④配線（testSlackPostのサンプルカード表示をCEOのSlackで画面確認、2026-07-30）"
+          },
+          {
             "done": false,
             "label": "見積書・請求書の発行状況・商談ステータスの確認"
           },
@@ -491,7 +493,7 @@
           },
           {
             "done": false,
-            "label": "M3: Slack完結POC検証（要CEOのSlackワークスペース）"
+            "label": "M3-b/c: 実AI下書きカード→Slack Interactivityでボタン実送信"
           },
           {
             "done": false,
@@ -502,11 +504,11 @@
             "label": "受注/見送りの最終判断"
           }
         ],
-        "done": 5,
-        "total": 11,
-        "pct": 45
+        "done": 6,
+        "total": 12,
+        "pct": 50
       },
-      "last_checked": "2026-07-30"
+      "last_checked": "2026-07-31"
     }
   ]
 }
