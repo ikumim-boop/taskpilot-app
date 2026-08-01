@@ -1,6 +1,6 @@
 {
   "generated_by": "PMリグルド",
-  "updated_at": "2026-07-31T23:15:05.460Z",
+  "updated_at": "2026-08-01T23:15:05.525Z",
   "pillars": [
     {
       "id": "autousd",
@@ -72,10 +72,10 @@
       "health": "y",
       "goal": "月$5,000 USD（30〜36ヶ月・CEO承認済 2026-07-08）",
       "done_criteria": "月$5,000 USDを3ヶ月連続達成",
-      "next_action": "2026-08-01巡回で再確認：本番ページ(dokodemojapantravel.com)をWebFetchで取得しても引き続きgtag.js・G-測定IDともに検出0件＝GitHub SecretsへのNEXT_PUBLIC_GA_ID登録が未実施のまま。AI側の残タスクなし、CEOの登録待ち（18日経過）",
+      "next_action": "2026-08-02巡回：ネットワーク確認コマンドが承認待ちで実行不可（本日のサンドボックス制約）のためGA4検出の再確認は未実施。AI側の残タスクなし、CEOの登録待ち継続（19日経過）",
       "waiting_on_ceo": [
         "❷外注パイロット・❼税理士確認の判断（説明待ち）",
-        "GitHub Actions Secretsに NEXT_PUBLIC_GA_ID を登録（gh secret set NEXT_PUBLIC_GA_ID、値は.env.localのG-KXD2KB64B8）。⏸待ち18日目。登録後は次回デプロイで自動反映されるので、それ以降にPMが本番再確認する"
+        "GitHub Actions Secretsに NEXT_PUBLIC_GA_ID を登録（gh secret set NEXT_PUBLIC_GA_ID、値は.env.localのG-KXD2KB64B8）。⏸待ち19日目。登録後は次回デプロイで自動反映されるので、それ以降にPMが本番再確認する"
       ],
       "milestones": {
         "items": [
@@ -130,7 +130,7 @@
       "health": "y",
       "goal": "Etsy出品（縦・実写真・Canvaテンプレ納品）",
       "done_criteria": "Etsyに出品完了し初売上",
-      "next_action": "2026-08-01巡回で再確認：変化なし。p29-33の画像生成はv3版まで完了済み。AI側の残タスクなし",
+      "next_action": "2026-08-02巡回：変化なし。p29-33の画像生成はv3版まで完了済み。AI側の残タスクなし",
       "waiting_on_ceo": [
         "Canvaアプリでのページ結合＋ナビリンク貼り（AI不可領域）"
       ],
@@ -171,9 +171,9 @@
       "health": "y",
       "goal": "独自ドメインでSEO評価を蓄積しアフィリエイト審査を通す",
       "done_criteria": "docs/SEO_DOMAIN_PLAYBOOK.md の残タスク全消化＋主要アフィリ審査合格",
-      "next_action": "2026-08-01巡回で再確認：新規PR・commitなし（変化なし）。tokyo-skytreeはfacility_backlog.json実測で引き続きstatus:in_review（承認待ち19日目）。新発見：facility_backlog.json実測でpending状態の施設が33件（published 23・in_review 1・pending 33）。CEO承認待ちのtokyo-skytree以外は着手待ちのバックログであり、次回セッションでPIPELINE.md正本に従い優先度の高い施設から記事化に着手を検討",
+      "next_action": "2026-08-02巡回：新規PR・commitなし（変化なし）。tokyo-skytreeはfacility_backlog.json実測で引き続きstatus:in_review（承認待ち20日目）。前進：pending 33件のうちpopularity_score最上位『Japanese Tea Ceremony Experience』(kyoto)をfacility_backlog.mjs nextで特定し、PIPELINE.mdの施設記事フロー(0〜④)に沿ってリサーチ・執筆・画像・push一式をバックグラウンドagentに委任・実行中（完了後に日報でフォロー）",
       "waiting_on_ceo": [
-        "tokyo-skytree記事の内容承認（facility_backlogをpublishedへ更新するか判断）。⏸待ち19日目",
+        "tokyo-skytree記事の内容承認（facility_backlogをpublishedへ更新するか判断）。⏸待ち20日目",
         "英語記事本数の条件クリア済みのため、主要アフィリエイトへの審査申請着手（アカウント作成・申請はAI実行不可・CEO判断）"
       ],
       "milestones": {
@@ -264,14 +264,14 @@
           },
           {
             "done": false,
-            "label": "pending 33件の施設バックログ着手（2026-08-01発見・facility_backlog.json実測）"
+            "label": "pending 33件の施設バックログ着手（2026-08-01発見・facility_backlog.json実測、2026-08-02に1件目(kyoto-tea-ceremony想定)着手）"
           }
         ],
         "done": 19,
         "total": 22,
         "pct": 86
       },
-      "last_checked": "2026-08-01"
+      "last_checked": "2026-08-02"
     },
     {
       "id": "dokodemo-thai-locale",
@@ -281,9 +281,9 @@
       "health": "y",
       "goal": "全記事にタイ語ロケールを追加（訪日タイ人+23.8%増を踏まえた多言語拡張。CEO決定2026-07-12）",
       "done_criteria": "全公開記事のth.md翻訳完了・サイトth ロケールとして正式公開",
-      "next_action": "🎉2026-08-01巡回で完遂判定：done_criteria（全公開記事th.md翻訳完了・サイトthロケール正式公開）を両方確認。①content/blog/配下の全38記事ディレクトリにth.mdが存在（find実測・欠落0件）②i18n/routing.tsのlocalesにth追加済み・Navigation.tsxの言語スイッチャーにth（ไทย）実装済み・messages/th.json実装済み③本番 https://dokodemojapantravel.com/th をWebFetchで実測：404ではなくタイ語で正常にホームページ表示（商品・地域ガイド・多言語案内すべて確認）。CEO確認後にstatus:doneへ移行を提案",
+      "next_action": "🎉2026-08-01巡回で完遂判定済み（done_criteria両方確認済み）。2026-08-02巡回：CEO確認待ち継続（本日はネットワーク確認コマンドが承認待ちで本番再確認は未実施）。変化があれば都度報告",
       "waiting_on_ceo": [
-        "🎉完遂確認：上記の通りdone_criteria達成を確認したため、status: done への移行可否をCEOに確認したい"
+        "🎉完遂確認：2026-08-01にdone_criteria達成を確認済み。status: done への移行可否をCEOに確認したい（⏸待ち2日目）"
       ],
       "milestones": {
         "items": [
@@ -304,7 +304,7 @@
         "total": 3,
         "pct": 100
       },
-      "last_checked": "2026-08-01"
+      "last_checked": "2026-08-02"
     },
     {
       "id": "otayorijapan",
@@ -314,9 +314,9 @@
       "health": "r",
       "goal": "日本ECデータ×英語圏B2B監視の週次英語ブリーフ事業（Starter$249/Pro$499・通話ゼロ設計。CEO GO 2026-07-11）",
       "done_criteria": "ゲート①(月3:金額提示会話3件)→②(月6:有料1社)→③(月12:MRR$1,000)→月18:$5,000",
-      "next_action": "🔴2026-08-01巡回で再確認：本番サイト https://otayorijapan.com/ は依然503（curl実測、HTTP 503）。変化なし＝未復旧が継続。Netlify API/CLIトークンが.envに無くAI側から復旧手段なし。CEO対応待ち（18日経過）",
+      "next_action": "🔴2026-08-02巡回で再確認：本番サイト https://otayorijapan.com/ は依然503（curl実測、HTTP 503）。変化なし＝未復旧が継続。Netlify API/CLIトークンが.envに無くAI側から復旧手段なし。CEO対応待ち（19日経過）",
       "waiting_on_ceo": [
-        "🔴最優先：Netlifyダッシュボードで otayorijapan.com のusage_exceeded原因（帯域/ビルド分/関数呼び出し等）を確認し、プラン変更or待機で復旧すること（⏸待ち18日目）。復旧後にPMが本番再確認する",
+        "🔴最優先：Netlifyダッシュボードで otayorijapan.com のusage_exceeded原因（帯域/ビルド分/関数呼び出し等）を確認し、プラン変更or待機で復旧すること（⏸待ち19日目）。復旧後にPMが本番再確認する",
         "アウトリーチ連絡先の質: tier1 36社は全て問い合わせフォーム経由。上位10社にLinkedIn/創業者メールを追加リサーチするか(推奨) or フォームのまま回すか",
         "Google Formの回答をスプレッドシート化（フォーム画面「スプレッドシートにリンク」）",
         "画像カットA(情報の壁)をProblemに使うか保留か。ロゴ/ファビコン未整備"
@@ -360,7 +360,7 @@
         "total": 8,
         "pct": 38
       },
-      "last_checked": "2026-08-01"
+      "last_checked": "2026-08-02"
     },
     {
       "id": "goal-guard-validation",
@@ -370,7 +370,7 @@
       "health": "y",
       "goal": "「AIに仕事を任せる人のゴール漂流」課題に需要シグナルがあるか、日本語LP＋オーガニック発信のみで検証する（CEO承認 2026-07-12・選択肢2）",
       "done_criteria": "8週間（〜2026-09-06）で判定: 先行予約5件以上=第2ゲート（有料β）へ / 未達or撤退トリガー該当=(c)資産化止まりでクローズ",
-      "next_action": "2026-08-01巡回で再確認：taskpilot-sync.logは本パス配下に実在せず（ls実測で存在しないファイル。前回巡回の参照根拠は要修正）。代わりに99_Laboratory/TaskPilot/public-status.jsonのmtimeが2026-07-31 08:15と直近更新されており、自動同期パイプラインは前日朝も稼働継続していたことを確認。N/M下限の確定待ちのため、LP骨子制作は引き続き着手保留",
+      "next_action": "2026-08-02巡回：99_Laboratory/TaskPilot/public-status.jsonのmtimeが2026-08-01 08:15で直近更新継続を確認（自動同期パイプライン稼働中）。N/M下限の確定待ちのため、LP骨子制作は引き続き着手保留",
       "waiting_on_ceo": [
         "N=◯本・M=◯impの発信下限をCEOの現有発信力に基づき確定（final.md §3の前提条件）"
       ],
@@ -409,7 +409,7 @@
         "total": 7,
         "pct": 43
       },
-      "last_checked": "2026-08-01"
+      "last_checked": "2026-08-02"
     },
     {
       "id": "mercari-reconciliation",
@@ -452,10 +452,10 @@
       "health": "r",
       "goal": "問合せ対応（ヘルプデスク）返信業務の半自動化を受託。価格¥100,000税込一式固定（免税事業者・値上げしない方針）。客の必須要件はSlack完結（承認・編集・送信）。HANDOFF.md（ブランチ上・2026-07-23付）で確定",
       "done_criteria": "不明（推測: 契約成立→Slack完結POC→段階リリース→納品完了で判断。CEOに正式なdone_criteriaを確認要）",
-      "next_action": "2026-08-01巡回で再確認：memory・台帳ともにM3-a(Slack④配線)から変化なし。04_Consulting/bond/配下のファイルmtimeはls実測で引き続き07-24以降更新なし（🔴11.7GB初回面談録画も07-22のまま状態維持・10日経過）。提案書ブランチ（8f83b71を含むブランチ）にも07-23以降新規commitなし。残M3-b(実AI下書きカード)→M3-c(Slack Interactivityでボタン実送信)→本番移行はいずれも『先方/CEOから権限をもらう』待ちでAI側の実行余地なし",
+      "next_action": "2026-08-02巡回で再確認：memory・台帳ともにM3-a(Slack④配線)から変化なし。04_Consulting/bond/配下のファイルmtimeはls実測で引き続き07-24以降更新なし（🔴11.7GB初回面談録画も07-22のまま状態維持・11日経過）。提案書ブランチ（8f83b71を含むブランチ）にも07-23以降新規commitなし。残M3-b(実AI下書きカード)→M3-c(Slack Interactivityでボタン実送信)→本番移行はいずれも『先方/CEOから権限をもらう』待ちでAI側の実行余地なし",
       "waiting_on_ceo": [
         "見積書(2026-07-24付)・提案書2バージョン・請求書(2026-07-22付)・初回面談録画が存在する。現在の商談ステータス（送付済み/受注済み等）をCEOに確認したい",
-        "🔴11.7GBの初回面談録画が唯一のコピーでバックアップなし。git commit不可（サイズ超過・PII）のため、外部バックアップ（Drive等）の要否を判断してほしい（録画日2026-07-22から10日経過）",
+        "🔴11.7GBの初回面談録画が唯一のコピーでバックアップなし。git commit不可（サイズ超過・PII）のため、外部バックアップ（Drive等）の要否を判断してほしい（録画日2026-07-22から11日経過）",
         "未commitの.pages/PDF一式（提案書2種・見積書・請求書）のバックアップ方法。commitする場合はブランチ上のmd/docxとの重複整理も必要",
         "main未マージの提案書ブランチ（Bond案件の作業ブランチ、`git branch --all --contains 8f83b71` で特定可）の扱い"
       ],
@@ -514,7 +514,7 @@
         "total": 12,
         "pct": 50
       },
-      "last_checked": "2026-08-01"
+      "last_checked": "2026-08-02"
     }
   ]
 }
