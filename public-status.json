@@ -1,6 +1,6 @@
 {
   "generated_by": "PMリグルド",
-  "updated_at": "2026-08-01T23:15:05.525Z",
+  "updated_at": "2026-08-02T23:15:05.665Z",
   "pillars": [
     {
       "id": "autousd",
@@ -10,9 +10,9 @@
       "health": "y",
       "project_count": 4,
       "active_project_count": 4,
-      "done": 26,
-      "total": 39,
-      "pct": 67
+      "done": 27,
+      "total": 41,
+      "pct": 66
     },
     {
       "id": "otayorijapan",
@@ -171,9 +171,10 @@
       "health": "y",
       "goal": "独自ドメインでSEO評価を蓄積しアフィリエイト審査を通す",
       "done_criteria": "docs/SEO_DOMAIN_PLAYBOOK.md の残タスク全消化＋主要アフィリ審査合格",
-      "next_action": "2026-08-02巡回：新規PR・commitなし（変化なし）。tokyo-skytreeはfacility_backlog.json実測で引き続きstatus:in_review（承認待ち20日目）。前進：pending 33件のうちpopularity_score最上位『Japanese Tea Ceremony Experience』(kyoto)をfacility_backlog.mjs nextで特定し、PIPELINE.mdの施設記事フロー(0〜④)に沿ってリサーチ・執筆・画像・push一式をバックグラウンドagentに委任・実行中（完了後に日報でフォロー）",
+      "next_action": "2026-08-02巡回：新規PR・commitなし（変化なし）。tokyo-skytreeはfacility_backlog.json実測で引き続きstatus:in_review（承認待ち20日目）。前進：pending 33件のうちpopularity_score最上位『Japanese Tea Ceremony Experience』(kyoto-tea-ceremony)をfacility_backlog.mjs nextで特定し、PIPELINE.mdの施設記事フロー0〜④(リサーチ→執筆→content-creator-advocateレビュー→画像7枚生成→push)を完走してPR#129作成済み（CEO確認待ち）。作業中に画像生成workflowの二重起動で1回git push競合が発生したが、成功した方のCI実行(488c745)で画像7枚とも正常反映を確認済み",
       "waiting_on_ceo": [
         "tokyo-skytree記事の内容承認（facility_backlogをpublishedへ更新するか判断）。⏸待ち20日目",
+        "PR#129（京都・茶道体験 kyoto-tea-ceremony）の内容確認・承認（新規・⏸待ち0日目）",
         "英語記事本数の条件クリア済みのため、主要アフィリエイトへの審査申請着手（アカウント作成・申請はAI実行不可・CEO判断）"
       ],
       "milestones": {
@@ -263,13 +264,21 @@
             "label": "主要アフィリ審査申請・合格"
           },
           {
+            "done": true,
+            "label": "pending 33件の施設バックログ1件目着手：京都・茶道体験(kyoto-tea-ceremony) PR#129作成（2026-08-02、ja.mdドラフト+画像7枚、CEO確認待ち）"
+          },
+          {
             "done": false,
-            "label": "pending 33件の施設バックログ着手（2026-08-01発見・facility_backlog.json実測、2026-08-02に1件目(kyoto-tea-ceremony想定)着手）"
+            "label": "PR#129 CEO確認・承認・マージ"
+          },
+          {
+            "done": false,
+            "label": "pending 残32件の着手（次回以降）"
           }
         ],
-        "done": 19,
-        "total": 22,
-        "pct": 86
+        "done": 20,
+        "total": 24,
+        "pct": 83
       },
       "last_checked": "2026-08-02"
     },
