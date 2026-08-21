@@ -1,18 +1,18 @@
 {
   "generated_by": "PMリグルド",
-  "updated_at": "2026-08-20T23:15:05.344Z",
+  "updated_at": "2026-08-21T23:15:05.524Z",
   "pillars": [
     {
       "id": "autousd",
       "name": "AutoUSD",
       "icon": "💵",
       "goal": "月$5,000 USD事業計画（30〜36ヶ月・CEO承認済 2026-07-08）",
-      "health": "y",
+      "health": "r",
       "project_count": 4,
       "active_project_count": 4,
-      "done": 38,
-      "total": 55,
-      "pct": 69
+      "done": 39,
+      "total": 58,
+      "pct": 67
     },
     {
       "id": "otayorijapan",
@@ -72,10 +72,10 @@
       "health": "y",
       "goal": "月$5,000 USD（30〜36ヶ月・CEO承認済 2026-07-08）",
       "done_criteria": "月$5,000 USDを3ヶ月連続達成",
-      "next_action": "2026-08-21巡回：gh secret listが本日もサンドボックス承認待ちで実行不可のため登録有無を直接確認できず（08-12〜21と同様、10日連続）。AI側の残タスクなし、CEOの登録待ち継続（38日経過）",
+      "next_action": "2026-08-22巡回：gh secret listが本日もサンドボックス承認待ちで実行不可のため登録有無を直接確認できず（08-12〜22と同様、11日連続）。AI側の残タスクなし、CEOの登録待ち継続（39日経過）",
       "waiting_on_ceo": [
         "❷外注パイロット・❼税理士確認の判断（説明待ち）",
-        "GitHub Actions Secretsに NEXT_PUBLIC_GA_ID を登録（gh secret set NEXT_PUBLIC_GA_ID、値は.env.localのG-KXD2KB64B8）。⏸待ち38日目。登録後は次回デプロイで自動反映されるので、それ以降にPMが本番再確認する"
+        "GitHub Actions Secretsに NEXT_PUBLIC_GA_ID を登録（gh secret set NEXT_PUBLIC_GA_ID、値は.env.localのG-KXD2KB64B8）。⏸待ち39日目。登録後は次回デプロイで自動反映されるので、それ以降にPMが本番再確認する"
       ],
       "milestones": {
         "items": [
@@ -120,7 +120,7 @@
         "total": 9,
         "pct": 33
       },
-      "last_checked": "2026-08-17"
+      "last_checked": "2026-08-22"
     },
     {
       "id": "japan-trip-planner",
@@ -130,7 +130,7 @@
       "health": "y",
       "goal": "Etsy出品（縦・実写真・Canvaテンプレ納品）",
       "done_criteria": "Etsyに出品完了し初売上",
-      "next_action": "2026-08-21巡回：変化なし。p29-33の画像生成はv3版まで完了済み。AI側の残タスクなし",
+      "next_action": "2026-08-22巡回：変化なし。p29-33の画像生成はv3版まで完了済み。AI側の残タスクなし",
       "waiting_on_ceo": [
         "Canvaアプリでのページ結合＋ナビリンク貼り（AI不可領域）"
       ],
@@ -161,24 +161,25 @@
         "total": 5,
         "pct": 20
       },
-      "last_checked": "2026-08-21"
+      "last_checked": "2026-08-22"
     },
     {
       "id": "dokodemo-blog-seo",
       "pillar": "autousd",
       "name": "DokodemoJapan ブログ・SEO・アフィリ審査",
       "status": "active",
-      "health": "y",
+      "health": "r",
       "goal": "独自ドメインでSEO評価を蓄積しアフィリエイト審査を通す",
       "done_criteria": "docs/SEO_DOMAIN_PLAYBOOK.md の残タスク全消化＋主要アフィリ審査合格",
-      "next_action": "🟡2026-08-21巡回：本日05:00予定だった週次ブログ制作（火・金launchd）の実行痕跡が無い。git log --since=yesterdayで新規commitなし、blog-draft各ブランチの最終コミットも08-19以前のまま、blog_pipeline配下で本日更新されたファイルも0件（find -newerで確認）。過去に claude auth 切れで無音空振りした前例あり（08-11・knowledge/weekly-log.md記載）。Mac起動状態・claude認証の確認をCEOに依頼したい。facility_backlog実測は前日と同じ（pending 28 / in_review 4 / published 25、不整合なし）。PR#129(kyoto-tea-ceremony)はOPEN継続、待ち20日目",
+      "next_action": "🔴2026-08-22巡回：昨日の懸念（週次ブログ制作の実行痕跡なし）は解消——08-22深夜00:29〜00:37に先斗町(kyoto-pontocho-alley)の日本語初稿が生成されpushされた（commit dbbc6b5/df13c08/3656ae8、ブランチblog-draft/kyoto-pontocho-alley）。structure_check/facts_check/claim_check全てerrors=0。facility_backlogはin_reviewへ正しく反映済み（実測pending27/in_review5/published25）。一方で画像生成はLeonardo（プロンプトstate非同期でGenerate disabled）・ChatGPT（応答なし90秒）の**2ルートとも2日連続で失敗**（weekly-log.md記載、08-21分と同一症状）。この自動化はClaude in Chromeの対話的ブラウザ操作に依存しており、PMのheadless巡回からは修正不可（次にブログを触るインタラクティブセッションでの対応が必要）。weekly-log.mdは「レビューURL発行済み」と記載しているが、PMからは実URLを確認できず（ログファイル2026-08-2x_blog_weekly.logが存在しない・facility_backlogにもURL欄なし）。CEOに実際にレビューURLが届いているか確認したい。PR#129(kyoto-tea-ceremony)はOPEN継続、待ち21日目",
       "waiting_on_ceo": [
-        "🆕本日05:00の週次ブログ制作が実行された形跡が無い（新規commit/draftブランチ/更新ファイルすべて0件）。Macの起動状態・claude認証切れの可能性をご確認いただきたい",
+        "🆕先斗町(kyoto-pontocho-alley)の日本語初稿レビュー。weekly-log.mdは「レビューURL発行済み」と記載しているが、PMはURL実体を確認できていない。届いていなければ次のインタラクティブセッションで本文を直接提示する",
+        "🔴画像生成の2ルート（Leonardo/ChatGPT）が2026-08-21・08-22と2日連続で失敗。Claude in Chrome依存のためheadless自動修復は不可。次にブログ作業をするインタラクティブセッションでの調査・復旧が必要（先斗町記事は画像0/8のまま）",
         "osaka-shinsekai(大阪・新世界/通天閣)記事の内容確認・承認（Artifact: https://claude.ai/code/artifact/88bfab22-c625-4f4a-8459-1ea9c6fc1191 ・advocate CRITICAL4/MAJOR4/MINOR8は本文へ未検算のため要確認、画像8/8添付済み）",
         "公開済み『nara-day-trip』に区画の罠（法華堂は大仏殿より90分早い16:00閉堂だが本文のどこにも記載なし・5言語共通・実害あり）。ディアブロが検収で発見・翻訳修正より優先度が高いと判定。修正要否・優先度をCEOに確認したい（2026-08-18発見、継続）",
         "新規記事『Street Go-Kart Tour』(tokyo-street-go-kart-tour)の内容確認・承認（08-14生成・国際運転免許証が必要な点の明記要確認）",
-        "PR#129（京都・茶道体験 kyoto-tea-ceremony）の内容確認・承認。GitHub/Vercelでは読めないため、次のチャットセッションでCEOに本文を直接提示してもらう形を推奨（⏸待ち20日目）",
-        "tokyo-skytree記事の内容承認（facility_backlogをpublishedへ更新するか判断。記事自体は07-13にmainマージ済みで内容確認可能）。⏸待ち39日目",
+        "PR#129（京都・茶道体験 kyoto-tea-ceremony）の内容確認・承認。GitHub/Vercelでは読めないため、次のチャットセッションでCEOに本文を直接提示してもらう形を推奨（⏸待ち21日目）",
+        "tokyo-skytree記事の内容承認（facility_backlogをpublishedへ更新するか判断。記事自体は07-13にmainマージ済みで内容確認可能）。⏸待ち40日目",
         "英語記事本数の条件クリア済みのため、主要アフィリエイトへの審査申請着手（アカウント作成・申請はAI実行不可・CEO判断）"
       ],
       "milestones": {
@@ -332,15 +333,27 @@
             "label": "facility_backlog.jsonのtokyo-meiji-jingu-shrine status不整合を修正（in_review→published、milestone確認済みとの乖離をPM巡回で検知・2026-08-20）"
           },
           {
+            "done": true,
+            "label": "pending施設5件目着手：先斗町(kyoto-pontocho-alley) 日本語初稿生成・in_review（2026-08-22深夜、ブランチblog-draft/kyoto-pontocho-alley、画像未添付・生成2ルートとも失敗）"
+          },
+          {
             "done": false,
-            "label": "pending 残28件の着手（次回以降）"
+            "label": "先斗町記事の内容承認"
+          },
+          {
+            "done": false,
+            "label": "画像生成2ルート（Leonardo/ChatGPT）の障害調査・復旧（2日連続失敗）"
+          },
+          {
+            "done": false,
+            "label": "pending 残27件の着手（次回以降）"
           }
         ],
-        "done": 31,
-        "total": 38,
-        "pct": 82
+        "done": 32,
+        "total": 41,
+        "pct": 78
       },
-      "last_checked": "2026-08-21"
+      "last_checked": "2026-08-22"
     },
     {
       "id": "dokodemo-thai-locale",
@@ -350,9 +363,9 @@
       "health": "y",
       "goal": "全記事にタイ語ロケールを追加（訪日タイ人+23.8%増を踏まえた多言語拡張。CEO決定2026-07-12）",
       "done_criteria": "全公開記事のth.md翻訳完了・サイトth ロケールとして正式公開",
-      "next_action": "🎉2026-08-01巡回で完遂判定済み（done_criteria両方確認済み）。2026-08-21巡回：新規commitなし。CEO確認待ち継続。変化があれば都度報告",
+      "next_action": "🎉2026-08-01巡回で完遂判定済み（done_criteria両方確認済み）。2026-08-22巡回：新規commitなし。CEO確認待ち継続。変化があれば都度報告",
       "waiting_on_ceo": [
-        "🎉完遂確認：2026-08-01にdone_criteria達成を確認済み。status: done への移行可否をCEOに確認したい（⏸待ち21日目）"
+        "🎉完遂確認：2026-08-01にdone_criteria達成を確認済み。status: done への移行可否をCEOに確認したい（⏸待ち22日目）"
       ],
       "milestones": {
         "items": [
@@ -373,7 +386,7 @@
         "total": 3,
         "pct": 100
       },
-      "last_checked": "2026-08-21"
+      "last_checked": "2026-08-22"
     },
     {
       "id": "otayorijapan",
@@ -383,7 +396,7 @@
       "health": "y",
       "goal": "日本ECデータ×英語圏B2B監視の週次英語ブリーフ事業（Starter$249/Pro$499・通話ゼロ設計。CEO GO 2026-07-11）",
       "done_criteria": "ゲート①(月3:金額提示会話3件)→②(月6:有料1社)→③(月12:MRR$1,000)→月18:$5,000",
-      "next_action": "2026-08-21巡回：outreach-tracker.csv実測で36社中date_sent記入0件、引き続き未着手（連絡先の質の判断がCEO待ちのため着手保留を継続）。gh secret list同様、本番サイト再確認はサンドボックス承認待ちで今回省略",
+      "next_action": "2026-08-22巡回：outreach-tracker.csv実測で36社中date_sent記入0件、引き続き未着手（連絡先の質の判断がCEO待ちのため着手保留を継続）。gh secret list同様、本番サイト再確認はサンドボックス承認待ちで今回省略",
       "waiting_on_ceo": [
         "アウトリーチ連絡先の質: tier1 36社は全て問い合わせフォーム経由。上位10社にLinkedIn/創業者メールを追加リサーチするか(推奨) or フォームのまま回すか",
         "Google Formの回答をスプレッドシート化（フォーム画面「スプレッドシートにリンク」）",
@@ -428,7 +441,7 @@
         "total": 8,
         "pct": 50
       },
-      "last_checked": "2026-08-21"
+      "last_checked": "2026-08-22"
     },
     {
       "id": "goal-guard-validation",
@@ -438,7 +451,7 @@
       "health": "y",
       "goal": "「AIに仕事を任せる人のゴール漂流」課題に需要シグナルがあるか、日本語LP＋オーガニック発信のみで検証する（CEO承認 2026-07-12・選択肢2）",
       "done_criteria": "8週間（〜2026-09-06）で判定: 先行予約5件以上=第2ゲート（有料β）へ / 未達or撤退トリガー該当=(c)資産化止まりでクローズ",
-      "next_action": "2026-08-21巡回：99_Laboratory/TaskPilot/public-status.jsonのupdated_atが2026-08-19 23:15 UTC(=08-20 08:15 JST)で1日分進行を確認（自動同期パイプライン稼働継続）。N/M下限の確定待ちのため、LP骨子制作は引き続き着手保留",
+      "next_action": "2026-08-22巡回：99_Laboratory/TaskPilot/public-status.jsonのupdated_atが2026-08-20 23:15 UTC(=08-21 08:15 JST)で1日分進行を確認（自動同期パイプライン稼働継続）。N/M下限の確定待ちのため、LP骨子制作は引き続き着手保留",
       "waiting_on_ceo": [
         "N=◯本・M=◯impの発信下限をCEOの現有発信力に基づき確定（final.md §3の前提条件）"
       ],
@@ -477,7 +490,7 @@
         "total": 7,
         "pct": 43
       },
-      "last_checked": "2026-08-21"
+      "last_checked": "2026-08-22"
     },
     {
       "id": "mercari-reconciliation",
@@ -487,7 +500,7 @@
       "health": "y",
       "goal": "毎月2日21時に、入力漏れの一覧と各外注さんの前月実績画像をCEOのLINEへ自動送信する",
       "done_criteria": "2026-09-02の自動発火で、8月分が人手を介さずLINEに届く",
-      "next_action": "2026-08-21巡回：変化なし（broadcast→push修正は08-16に反映済み）。2026-09-02の初回自動発火を見届ける（それまでは待機。CEOが「送って」と言えば2回目送信 --resend）",
+      "next_action": "2026-08-22巡回：変化なし（broadcast→push修正は08-16に反映済み）。2026-09-02の初回自動発火を見届ける（それまでは待機。CEOが「送って」と言えば2回目送信 --resend）",
       "waiting_on_ceo": [
         "7月分の入力漏れ3件（N1237 / K0192 / m2893）を外注さんに直してもらう → 直ったら合図で残り4名の画像を送信",
         "Vercel Blobの専用ストアを作るか、SNS自動化用ストアの間借りを続けるかの判断"
@@ -527,7 +540,7 @@
         "total": 7,
         "pct": 86
       },
-      "last_checked": "2026-08-21"
+      "last_checked": "2026-08-22"
     },
     {
       "id": "mercari-photo-sorter",
@@ -537,7 +550,7 @@
       "health": "y",
       "goal": "外注さんがGoogleドライブに写真を置くだけで、管理番号ごとの仕分け→財務台帳「商品管理」タブへのタイトル・説明文投入までを自動化する（GAS＋Gemini無料枠。Claude Codeは不可というCEO制約あり・2026-08-11）",
       "done_criteria": "外注さんの実写真で本番運用が問題なく回り、出品作業に残るのが人の最終仕上げのみになる",
-      "next_action": "2026-08-21巡回：git status確認・変化なし（VocabRefresh.js等は08-19実装のまま未commit継続、新たにCommon.jsも未追跡で存在。ExifScan.js/MovePrecheck.js削除を含む無関係差分も引き続き未commitで存在）。CEO判断待ちのため今回もAI側の新規実行はなし",
+      "next_action": "2026-08-22巡回：git status確認・変化なし（VocabRefresh.js等は08-19実装のまま未commit継続、新たにCommon.jsも未追跡で存在。ExifScan.js/MovePrecheck.js削除を含む無関係差分も引き続き未commitで存在）。CEO判断待ちのため今回もAI側の新規実行はなし",
       "waiting_on_ceo": [
         "写真仕分け完了のDiscord通知を設定するか（DISCORD_WEBHOOK_URL未設定でも動作はする）",
         "外注さんのiPhoneにDocuments by Readdle導入・撮影を標準カメラに切替の案内をするか（メルカリアプリのカメラだとExifが落ちてカメラロール順序が崩れるため）",
@@ -591,7 +604,7 @@
         "total": 10,
         "pct": 70
       },
-      "last_checked": "2026-08-21"
+      "last_checked": "2026-08-22"
     },
     {
       "id": "bond-helpdesk-proposal",
@@ -601,7 +614,7 @@
       "health": "r",
       "goal": "問合せ対応（ヘルプデスク）返信業務の半自動化を受託。価格¥100,000税込一式固定（免税事業者・値上げしない方針）。客の必須要件はSlack完結（承認・編集・送信）。HANDOFF.md（ブランチ上・2026-07-23付）で確定",
       "done_criteria": "不明（推測: 契約成立→Slack完結POC→段階リリース→納品完了で判断。CEOに正式なdone_criteriaを確認要）",
-      "next_action": "2026-08-21巡回で再確認：memory・台帳ともにM3-a(Slack④配線)から変化なし。プランファイル~/.claude/plans/gleaming-frolicking-hartmanis.mdは今回もセッションの許可ディレクトリ外(~/.claude/plans)でRead不可のため見送り継続。04_Consulting/Bond/配下は未追跡のままmtime変化なし（最終更新07-31）。提案書ブランチにも07-23以降新規commitなし。🔴11.7GB初回面談録画は07-22のまま状態維持・30日経過",
+      "next_action": "2026-08-22巡回で再確認：memory・台帳ともにM3-a(Slack④配線)から変化なし。プランファイル~/.claude/plans/gleaming-frolicking-hartmanis.mdは今回もセッションの許可ディレクトリ外(~/.claude/plans)でRead不可のため見送り継続。04_Consulting/Bond/配下は未追跡のままmtime変化なし（最終更新07-31）。提案書ブランチにも07-23以降新規commitなし。🔴11.7GB初回面談録画は07-22のまま状態維持・31日経過",
       "waiting_on_ceo": [
         "見積書(2026-07-24付)・提案書2バージョン・請求書(2026-07-22付)・初回面談録画が存在する。現在の商談ステータス（送付済み/受注済み等）をCEOに確認したい",
         "🔴11.7GBの初回面談録画が唯一のコピーでバックアップなし。git commit不可（サイズ超過・PII）のため、外部バックアップ（Drive等）の要否を判断してほしい（録画日2026-07-22から29日経過）",
@@ -663,7 +676,7 @@
         "total": 12,
         "pct": 50
       },
-      "last_checked": "2026-08-21"
+      "last_checked": "2026-08-22"
     }
   ]
 }
